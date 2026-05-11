@@ -51,6 +51,7 @@ NEXTAUTH_URL="https://ton-domaine.com"
 
 # Secret aléatoire de 32+ caractères
 NEXTAUTH_SECRET="genere-un-secret-avec-openssl-rand-base64-32"
+AUTH_TRUST_HOST=true
 
 # OAuth Discord (https://discord.com/developers/applications)
 DISCORD_CLIENT_ID="ton-client-id"
@@ -58,6 +59,16 @@ DISCORD_CLIENT_SECRET="ton-client-secret"
 
 # Base de données (Docker Compose fournit PostgreSQL automatiquement)
 DATABASE_URL="postgresql://synkrone:synkrone_pass@db:5432/synkrone?schema=public"
+
+# Chemins VPS (Docker monte /Partage/Synkrone)
+VPS_BOTS_PATH="/Partage/Synkrone/bots"
+VPS_MC_PATH="/Partage/Synkrone/mc"
+VPS_SITES_PATH="/Partage/Synkrone/sites"
+VPS_APPS_PATH="/Partage/Synkrone/apps"
+VPS_SHARED_PATH="/Partage/Synkrone"
+VPS_BOXES_PATH="/Partage/Synkrone/boxes"
+VPS_STORAGE_PATH="/Partage/Synkrone/storage"
+VPS_PYTHON_VENV="/Partage/Synkrone/.venv/bin/python"
 ```
 
 > **Générer un NEXTAUTH_SECRET sécurisé :**
@@ -65,6 +76,14 @@ DATABASE_URL="postgresql://synkrone:synkrone_pass@db:5432/synkrone?schema=public
 > openssl rand -base64 32
 > ```
 > Copie la sortie dans `NEXTAUTH_SECRET`.
+
+### Créer les dossiers sur le VPS
+
+Le container Docker monte le dossier `/Partage/Synkrone`. Crée-le et les sous-dossiers nécessaires :
+
+```bash
+sudo mkdir -p /Partage/Synkrone/{bots,mc,sites,apps,boxes,storage}
+```
 
 ---
 

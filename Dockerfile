@@ -1,7 +1,7 @@
 FROM node:20-alpine AS base
 
 # Dépendances système pour Prisma (openssl)
-RUN apk add --no-cache openssl
+RUN apk add --no-cache openssl bash
 
 WORKDIR /app
 

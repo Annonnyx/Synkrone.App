@@ -71,36 +71,47 @@ vercel --prod
 3. Connecter la variable `DATABASE_URL` automatiquement
 4. Ajouter manuellement `NEXTAUTH_SECRET`, `DISCORD_CLIENT_ID`, `DISCORD_CLIENT_SECRET`
 
-## 5. Déploiement VPS (Docker optionnel)
+## 5. Déploiement VPS
 
-### Sans Docker
+### Option A — Docker Compose (recommandé)
+
+Un `docker-compose.yml` et un `Dockerfile` sont déjà dans le repo.
 
 ```bash
-# PM2 recommandé
-npm i -g pm2
-pm2 start npm --name "synkrone" -- run start
-pm2 save
-pm2 startup
+# 1. Configurer les variables
+cp .env.example .env
+nano .env   # Remplir DISCORD_CLIENT_ID, DISCORD_CLIENT_SECRET, NEXTAUTH_SECRET
+
+# 2. Lancer (PostgreSQL + App)
+docker compose up -d --build
+
+# 3. Push le schema Prisma
+docker compose exec app npx prisma db push
 ```
 
-### Avec Docker
+L'app sera disponible sur `http://localhost:3000`.
 
-```dockerfile
-# Dockerfile
-FROM node:20-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
-COPY . .
-RUN npx prisma generate
-RUN npm run build
-EXPOSE 3000
-CMD ["npm", "run", "start"]
-```
+### Option B — Docker seul
 
 ```bash
 docker build -t synkrone .
 docker run -p 3000:3000 --env-file .env synkrone
+```
+
+### Option C — Sans Docker (PM2)
+
+```bash
+# Prérequis : PostgreSQL installé et accessible
+npm install
+npx prisma generate
+npx prisma db push
+npm run build
+
+# PM2
+npm i -g pm2
+pm2 start npm --name "synkrone" -- run start
+pm2 save
+pm2 startup
 ```
 
 ## 6. Post-déploiement

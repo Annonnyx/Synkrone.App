@@ -1,193 +1,256 @@
-# Déploiement Synkrone — Guide de mise en production
+# Déploiement Synkrone sur VPS — Guide complet
 
-## Prérequis
+Ce guide suppose un VPS frais sous **Ubuntu 22.04/24.04 LTS** avec accès root ou sudo.
 
-- Node.js 20+
-- PostgreSQL (base de données)
-- Un compte Discord (OAuth2 app configurée)
-- Un hébergeur supportant Node.js (VPS / PaaS)
+---
 
-## 1. Variables d'environnement
+## 1. Prérequis sur le VPS
 
-Créer un fichier `.env` à la racine (`.env.local` en dev) :
+Connecte-toi en SSH puis installe les outils de base :
 
 ```bash
-cp .env.example .env
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y curl git nginx certbot python3-certbot-nginx
 ```
 
-Remplir au minimum :
+### Installer Docker + Docker Compose
 
 ```bash
-# Database
-DATABASE_URL="postgresql://user:password@localhost:5432/synkrone?schema=public"
+# Docker
+curl -fsSL https://get.docker.com | sh
+sudo usermod -aG docker $USER
+newgrp docker
 
-# NextAuth / Discord OAuth
-NEXTAUTH_URL="https://ton-domaine.com"
-NEXTAUTH_SECRET="ta-secret-key-aleatoire-min-32-caracteres"
-DISCORD_CLIENT_ID="ton-discord-client-id"
-DISCORD_CLIENT_SECRET="ton-discord-client-secret"
+# Docker Compose (plugin)
+docker compose version  # Vérifier l'installation
 ```
 
-> **IMPORTANT** : Ne jamais commiter `.env*` — ils sont déjà dans `.gitignore`.
+---
 
-## 2. Base de données
+## 2. Préparer l'application
 
-Le projet utilise **PostgreSQL** avec **Prisma ORM**.
-
-### Avec Docker Compose (recommandé)
-
-PostgreSQL est lancé automatiquement par `docker-compose.yml` :
+### Cloner le repo
 
 ```bash
-docker compose up -d db
-```
-
-### Sans Docker
-
-Installer PostgreSQL et créer la base manuellement :
-
-```bash
-createdb synkrone
-```
-
-### Créer les tables
-
-```bash
-# Générer le client Prisma
-npx prisma generate
-
-# Appliquer les migrations existantes (prod)
-npx prisma migrate deploy
-
-# OU push direct du schema (dev / première install)
-npx prisma db push
-```
-
-### Seeder les données initiales
-
-```bash
-npx prisma db seed
-```
-
-Cela injecte :
-- Les définitions de commandes (`CommandDefinition`)
-- Les données de base nécessaires au fonctionnement
-
-Le seed est configuré dans `package.json` :
-
-```json
-"prisma": {
-  "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
-}
-```
-
-## 3. Installation & Build
-
-```bash
-# 1. Cloner le repo
 git clone https://github.com/Annonnyx/Synkrone.App.git
 cd Synkrone.App
-
-# 2. Installer les dépendances
-npm install
-
-# 3. Générer le client Prisma
-npx prisma generate
-
-# 4. Push le schema en base
-npx prisma db push
-
-# 5. Build (obligatoire avant prod)
-npm run build
 ```
 
-## 4. Lancer en production
+### Créer le fichier .env
 
 ```bash
-npm run start
-```
-
-Le serveur écoute par défaut sur le port défini par `PORT` ou `3000`.
-
-## 5. Déploiement Vercel (recommandé pour le front)
-
-```bash
-npm i -g vercel
-vercel --prod
-```
-
-**Avec base de données Vercel Postgres :**
-1. Créer un projet sur [vercel.com](https://vercel.com)
-2. Ajouter l'intégration "Postgres"
-3. Connecter la variable `DATABASE_URL` automatiquement
-4. Ajouter manuellement `NEXTAUTH_SECRET`, `DISCORD_CLIENT_ID`, `DISCORD_CLIENT_SECRET`
-
-## 6. Déploiement VPS
-
-### Option A — Docker Compose (recommandé)
-
-Un `docker-compose.yml` et un `Dockerfile` sont déjà dans le repo.
-
-```bash
-# 1. Configurer les variables
 cp .env.example .env
-nano .env   # Remplir DISCORD_CLIENT_ID, DISCORD_CLIENT_SECRET, NEXTAUTH_SECRET
+nano .env
+```
 
-# 2. Lancer (PostgreSQL + App)
+Remplis **obligatoirement** ces variables :
+
+```bash
+# Domaine public de ton VPS (avec https)
+NEXTAUTH_URL="https://ton-domaine.com"
+
+# Secret aléatoire de 32+ caractères
+NEXTAUTH_SECRET="genere-un-secret-avec-openssl-rand-base64-32"
+
+# OAuth Discord (https://discord.com/developers/applications)
+DISCORD_CLIENT_ID="ton-client-id"
+DISCORD_CLIENT_SECRET="ton-client-secret"
+
+# Base de données (Docker Compose fournit PostgreSQL automatiquement)
+DATABASE_URL="postgresql://synkrone:synkrone_pass@db:5432/synkrone?schema=public"
+```
+
+> **Générer un NEXTAUTH_SECRET sécurisé :**
+> ```bash
+> openssl rand -base64 32
+> ```
+> Copie la sortie dans `NEXTAUTH_SECRET`.
+
+---
+
+## 3. Discord OAuth — Configuration obligatoire
+
+Avant le premier lancement, configure ton application Discord :
+
+1. Va sur [discord.com/developers/applications](https://discord.com/developers/applications)
+2. Crée une application (ou ouvre la tienne)
+3. Menu **OAuth2** → **General**
+4. Dans **Redirects**, ajoute :
+   ```
+   https://ton-domaine.com/api/auth/callback/discord
+   ```
+5. Récupère le **Client ID** et le **Client Secret** pour ton `.env`
+
+---
+
+## 4. Lancer avec Docker Compose (recommandé)
+
+Le `docker-compose.yml` du repo lance **PostgreSQL + App** automatiquement.
+
+```bash
 docker compose up -d --build
+```
 
-# 3. Push le schema Prisma + seed
+Cela construit l'image Node.js et lance 2 containers :
+- `synkrone-db` — PostgreSQL 16 avec persistance
+- `synkrone-app` — Next.js en production
+
+### Créer les tables + données initiales
+
+```bash
+# Appliquer les migrations Prisma
 docker compose exec app npx prisma migrate deploy
+
+# Injecter les données de base (commandes, etc.)
 docker compose exec app npx prisma db seed
 ```
 
-L'app sera disponible sur `http://localhost:3000`.
-
-### Option B — Docker seul
+### Vérifier que tout tourne
 
 ```bash
-docker build -t synkrone .
-docker run -p 3000:3000 --env-file .env synkrone
+docker compose ps
+docker compose logs -f app
 ```
 
-### Option C — Sans Docker (PM2)
+L'app écoute sur le port `3000` du container. On va l'exposer via Nginx + HTTPS à l'étape suivante.
+
+---
+
+## 5. HTTPS + Nginx (reverse proxy)
+
+### Configurer Nginx
+
+Crée le fichier de config :
 
 ```bash
-# Prérequis : PostgreSQL installé et accessible
-cp .env.example .env
+sudo nano /etc/nginx/sites-available/synkrone
+```
+
+Colle ceci (remplace `ton-domaine.com`) :
+
+```nginx
+server {
+    listen 80;
+    server_name ton-domaine.com;
+
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+```
+
+Active le site :
+
+```bash
+sudo ln -s /etc/nginx/sites-available/synkrone /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl restart nginx
+```
+
+### Obtenir un certificat SSL (Let's Encrypt)
+
+```bash
+sudo certbot --nginx -d ton-domaine.com
+```
+
+Réponds aux questions. Certbot configure HTTPS et la redirection HTTP → HTTPS automatiquement.
+
+Renouvellement auto activé par défaut. Vérifie avec :
+
+```bash
+sudo certbot renew --dry-run
+```
+
+---
+
+## 6. Vérification finale
+
+Ouvre `https://ton-domaine.com` dans ton navigateur. Tu devrais voir le site Synkrone.
+
+**Tests rapides :**
+- Page d'accueil → OK
+- Bouton "Connexion" → redirige vers Discord
+- Retour après auth → Dashboard accessible
+
+---
+
+## 7. Mises à jour (prochaines versions)
+
+```bash
+cd ~/Synkrone.App  # ou le dossier du repo
+git pull origin main
+
+# Rebuild + redémarrer
+docker compose up -d --build
+
+# Appliquer les nouvelles migrations si besoin
+docker compose exec app npx prisma migrate deploy
+
+# Vérifier les logs
+docker compose logs -f app
+```
+
+---
+
+## 8. Commandes utiles (Docker)
+
+| Action | Commande |
+|---|---|
+| Voir les logs | `docker compose logs -f app` |
+| Redémarrer l'app | `docker compose restart app` |
+| Entrer dans le container | `docker compose exec app sh` |
+| Arrêter tout | `docker compose down` |
+| Arrêter + supprimer données | `docker compose down -v` |
+| Voir l'espace disque | `docker system df` |
+
+---
+
+## 9. Sans Docker (alternative PM2)
+
+Si tu préfères ne pas utiliser Docker :
+
+```bash
+# 1. Installer PostgreSQL manuellement
+sudo apt install -y postgresql postgresql-contrib
+sudo -u postgres createdb synkrone
+
+# 2. Configurer .env avec une connexion locale
+# DATABASE_URL="postgresql://postgres:password@localhost:5432/synkrone?schema=public"
+
+# 3. Installer et build
 npm install
 npx prisma generate
 npx prisma migrate deploy
 npx prisma db seed
 npm run build
 
-# PM2
+# 4. Lancer avec PM2
 npm i -g pm2
 pm2 start npm --name "synkrone" -- run start
 pm2 save
 pm2 startup
 ```
 
-## 7. Post-déploiement
+Puis configure Nginx + HTTPS (étape 5) pareil.
 
-- **Configurer l'URL de callback Discord** : `https://ton-domaine.com/api/auth/callback/discord`
-- **Vérifier la connexion DB** via le dashboard
-- **Activer les webhooks** si nécessaire
-
-## 8. Mises à jour
-
-```bash
-git pull origin main
-npm install
-npx prisma generate
-npm run build
-# Redémarrer le service (PM2 : pm2 restart synkrone)
-```
+---
 
 ## Checklist pré-déploiement
 
-- [ ] `npm run build` passe sans erreur
-- [ ] Variables d'environnement configurées
-- [ ] Base de données accessible
-- [ ] OAuth Discord configuré avec la bonne URL de callback
-- [ ] HTTPS activé (Let's Encrypt / Vercel / Cloudflare)
+- [ ] VPS Ubuntu avec Docker & Docker Compose installés
+- [ ] Repo cloné sur le VPS
+- [ ] Fichier `.env` créé avec toutes les variables remplies
+- [ ] Discord OAuth configuré avec la bonne URL de callback (`https://ton-domaine.com/api/auth/callback/discord`)
+- [ ] `docker compose up -d --build` lancé sans erreur
+- [ ] Migrations + seed appliqués
+- [ ] Nginx configuré avec ton domaine
+- [ ] Certificat SSL Let's Encrypt obtenu
+- [ ] Site accessible en HTTPS

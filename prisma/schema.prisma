@@ -1,0 +1,179 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id               String             @id @default(cuid())
+  discordId        String             @unique
+  username         String
+  email            String?
+  avatar           String?
+  roles            String[]
+  kronesBalance    Int                @default(1000)
+  kronesSpent      Int                @default(0)
+  subscriptionId   String?            @unique
+  subscription     Subscription?      @relation(fields: [subscriptionId], references: [id])
+  bots             Bot[]
+  minecraftServers MinecraftServer[]
+  sites            Site[]
+  apps             App[]
+  transactions     KroneTransaction[]
+  boxQuotaMb       Int                @default(500)
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+}
+
+model Subscription {
+  id             String   @id @default(cuid())
+  user           User?
+  plan           String
+  kronesPerMonth Int
+  priceEuros     Float
+  startedAt      DateTime @default(now())
+  renewsAt       DateTime
+  status         String   @default("ACTIVE")
+}
+
+model KroneTransaction {
+  id        String   @id @default(cuid())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  amount    Int
+  reason    String
+  relatedId String?
+  createdAt DateTime @default(now())
+}
+
+model Bot {
+  id             String    @id @default(cuid())
+  user           User      @relation(fields: [userId], references: [id])
+  userId         String
+  botName        String
+  prefix         String    @default("!")
+  slashCommands  Boolean   @default(false)
+  cogs           String[]
+  kronesConsumed Int       @default(0)
+  status         String    @default("OFFLINE")
+  groupId        String?
+  group          BotGroup? @relation(fields: [groupId], references: [id])
+  encPath        String
+  dirPath        String
+  stats          BotStats?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}
+
+model BotGroup {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  botCount  Int      @default(0)
+  maxBots   Int      @default(10)
+  status    String   @default("RUNNING")
+  bots      Bot[]
+  createdAt DateTime @default(now())
+}
+
+model BotStats {
+  id             String   @id @default(cuid())
+  bot            Bot      @relation(fields: [botId], references: [id])
+  botId          String   @unique
+  serversCount   Int      @default(0)
+  commandsTotal  Int      @default(0)
+  errorsLast24h  Int      @default(0)
+  uptimeSeconds  Int      @default(0)
+  updatedAt      DateTime @updatedAt
+}
+
+model MinecraftServer {
+  id              String            @id @default(cuid())
+  user            User              @relation(fields: [userId], references: [id])
+  userId          String
+  serverName      String
+  version         String
+  ramMb           Int
+  storageQuotaMb  Int               @default(5120)
+  storageUsedMb   Int               @default(0)
+  gameMode        String            @default("SURVIVAL")
+  difficulty      String            @default("NORMAL")
+  pvp             Boolean           @default(true)
+  maxPlayers      Int               @default(20)
+  status          String            @default("OFFLINE")
+  dirPath         String
+  sftpUser        String
+  sftpPasswordEnc String
+  pm2Name         String
+  kronesPerMonth  Int
+  backups         MinecraftBackup[]
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+}
+
+model MinecraftBackup {
+  id        String          @id @default(cuid())
+  server    MinecraftServer @relation(fields: [serverId], references: [id])
+  serverId  String
+  filePath  String
+  sizeMb    Float
+  type      String          @default("AUTO")
+  createdAt DateTime        @default(now())
+}
+
+model Site {
+  id            String   @id @default(cuid())
+  user          User     @relation(fields: [userId], references: [id])
+  userId        String
+  projectName   String
+  description   String
+  siteType      String
+  status        String   @default("PENDING")
+  url           String?
+  dirPath       String?
+  nginxConfig   String?
+  kronesPerMonth Int     @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model App {
+  id            String   @id @default(cuid())
+  user          User     @relation(fields: [userId], references: [id])
+  userId        String
+  appName       String
+  description   String
+  runtime       String
+  status        String   @default("PENDING")
+  url           String?
+  dirPath       String?
+  pm2Name       String?
+  kronesPerMonth Int     @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model CommandDefinition {
+  id          String  @id
+  name        String
+  description String
+  category    String
+  module      String
+  priceKr     Int
+  premium     Boolean @default(false)
+  usage       String
+  permissions Json
+  envVars     Json
+  version     String  @default("1.0.0")
+}
+
+model AdminLog {
+  id        String   @id @default(cuid())
+  actorId   String
+  action    String
+  target    String?
+  details   String?
+  createdAt DateTime @default(now())
+}

@@ -54,7 +54,7 @@ app.prepare().then(() => {
     shell.on("close", () => ws.close());
   });
 
-  server.listen(3000, () => {
-    console.log("> Serveur démarré sur http://localhost:3000");
+  server.listen(3000, "0.0.0.0", () => {
+    console.log("> Serveur démarré sur http://0.0.0.0:3000");
   });
 });

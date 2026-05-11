@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
-import { Package, HardDrive } from "lucide-react";
+import { HardDrive, FolderOpen, ChevronLeft } from "lucide-react";
+import FileManager from "@/components/dev/FileManager";
 
 type User = {
   id: string;
@@ -17,6 +18,7 @@ export default function AdminBoxesPage() {
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [selectedUser, setSelectedUser] = useState<User | null>(null);
 
   useEffect(() => {
     fetch("/api/admin/users")
@@ -35,6 +37,25 @@ export default function AdminBoxesPage() {
     return (
       <div className="p-8">
         <p className="text-neutral-400">Chargement...</p>
+      </div>
+    );
+  }
+
+  if (selectedUser) {
+    return (
+      <div className="p-8 h-[calc(100vh-4rem)] flex flex-col">
+        <div className="flex items-center gap-3 mb-4">
+          <button
+            onClick={() => setSelectedUser(null)}
+            className="inline-flex items-center gap-1.5 rounded-lg border border-white/[0.08] bg-white/[0.03] px-3 py-1.5 text-xs font-medium text-neutral-300 transition-all hover:bg-white/[0.06]"
+          >
+            <ChevronLeft className="h-3.5 w-3.5" />
+            Retour à la liste
+          </button>
+        </div>
+        <div className="flex-1 min-h-0">
+          <FileManager userId={selectedUser.id} username={selectedUser.username} />
+        </div>
       </div>
     );
   }
@@ -95,13 +116,13 @@ export default function AdminBoxesPage() {
                     : `${u.boxQuotaMb.toLocaleString("fr-FR")} Mo`}
                 </td>
                 <td className="px-4 py-3 text-right">
-                  <a
-                    href={`/dev/boxes/${u.id}`}
-                    className="inline-flex items-center gap-1 text-xs text-cyan-400 hover:underline"
+                  <button
+                    onClick={() => setSelectedUser(u)}
+                    className="inline-flex items-center gap-1 text-xs text-cyan-400 hover:text-cyan-300 transition-colors"
                   >
-                    <Package className="h-3 w-3" />
+                    <FolderOpen className="h-3 w-3" />
                     Ouvrir
-                  </a>
+                  </button>
                 </td>
               </tr>
             ))}

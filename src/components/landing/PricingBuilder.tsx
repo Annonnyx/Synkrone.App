@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Bot, Server, Globe, Smartphone, Zap, ArrowRight, Minus, Plus, Check } from "lucide-react";
+import { Bot, Server, Globe, Smartphone, Zap, ArrowRight, Minus, Plus, Check, Sparkles } from "lucide-react";
 
 type Period = "monthly" | "yearly";
+type View = "plans" | "custom";
 
 interface Config {
   bots: number;
@@ -20,6 +21,45 @@ const PRICES = {
   app: 12.99,
   creditsPer100: 1.99,
 };
+
+const PLANS = [
+  {
+    name: "Starter",
+    subtitle: "Idéal pour tester. 2-3 modules.",
+    monthlyPrice: 4.99,
+    yearlyPrice: 47.90,
+    features: ["1 bot Discord", "2-3 modules actifs", "Support communautaire"],
+    highlighted: false,
+    color: "neutral",
+  },
+  {
+    name: "Pro",
+    subtitle: "Pour les petits serveurs. 4-6 modules.",
+    monthlyPrice: 9.99,
+    yearlyPrice: 95.90,
+    features: ["1 bot Discord", "4-6 modules actifs", "Support email", "Stats avancées"],
+    highlighted: true,
+    color: "cyan",
+  },
+  {
+    name: "Studio",
+    subtitle: "Pour les communautés moyennes. Tous modules.",
+    monthlyPrice: 19.99,
+    yearlyPrice: 191.90,
+    features: ["3 bots Discord", "Modules illimités", "Support prioritaire", "API access"],
+    highlighted: false,
+    color: "violet",
+  },
+  {
+    name: "Enterprise",
+    subtitle: "Pour les gros serveurs actifs.",
+    monthlyPrice: 39.99,
+    yearlyPrice: 383.90,
+    features: ["10 bots Discord", "Modules illimités", "Instance supplémentaire", "Webhook custom"],
+    highlighted: false,
+    color: "emerald",
+  },
+];
 
 function Stepper({
   value,
@@ -126,10 +166,12 @@ export default function PricingBuilder() {
           ? "-20%"
           : null;
 
+  const [view, setView] = useState<View>("plans");
+
   return (
-    <div className="mx-auto max-w-5xl">
+    <div className="mx-auto max-w-6xl">
       {/* Period toggle */}
-      <div className="mb-10 flex justify-center">
+      <div className="mb-8 flex justify-center">
         <div className="inline-flex items-center gap-1 rounded-xl border border-white/10 bg-white/[0.03] p-1">
           <button
             onClick={() => setPeriod("monthly")}
@@ -154,6 +196,87 @@ export default function PricingBuilder() {
         </div>
       </div>
 
+      {/* View toggle */}
+      <div className="mb-10 flex justify-center">
+        <div className="inline-flex items-center gap-1 rounded-xl border border-white/10 bg-white/[0.03] p-1">
+          <button
+            onClick={() => setView("plans")}
+            className={`rounded-lg px-5 py-2 text-sm font-medium transition-all ${
+              view === "plans"
+                ? "bg-white/[0.08] text-white ring-1 ring-white/10"
+                : "text-neutral-400 hover:text-neutral-200"
+            }`}
+          >
+            Plans
+          </button>
+          <button
+            onClick={() => setView("custom")}
+            className={`rounded-lg px-5 py-2 text-sm font-medium transition-all ${
+              view === "custom"
+                ? "bg-white/[0.08] text-white ring-1 ring-white/10"
+                : "text-neutral-400 hover:text-neutral-200"
+            }`}
+          >
+            Personnalisé
+          </button>
+        </div>
+      </div>
+
+      {view === "plans" ? (
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {PLANS.map((plan) => {
+            const price = period === "yearly" ? plan.yearlyPrice : plan.monthlyPrice;
+            const colorMap: Record<string, string> = {
+              neutral: "from-neutral-500/20 to-neutral-600/20 text-neutral-400",
+              cyan: "from-[#00e1ff]/20 to-[#5865F2]/20 text-cyan-accent",
+              violet: "from-violet-500/20 to-purple-500/20 text-violet-400",
+              emerald: "from-emerald-500/20 to-emerald-600/20 text-emerald-400",
+            };
+            const ringMap: Record<string, string> = {
+              neutral: "ring-white/10",
+              cyan: "ring-[#00e1ff]/30",
+              violet: "ring-violet-500/30",
+              emerald: "ring-emerald-500/30",
+            };
+            return (
+              <div
+                key={plan.name}
+                className={`group relative flex flex-col rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 transition-all duration-300 hover:-translate-y-2 hover:border-white/[0.12] hover:shadow-2xl ${
+                  plan.highlighted
+                    ? "border-[#00e1ff]/20 bg-gradient-to-b from-[#00e1ff]/5 to-transparent hover:border-[#00e1ff]/40"
+                    : ""
+                }`}
+              >
+                {plan.highlighted && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-[#00e1ff] to-[#5865F2] px-3 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#0a0a0a]">
+                    Populaire
+                  </div>
+                )}
+                <div className={`mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${colorMap[plan.color]} ring-1 ${ringMap[plan.color]}`}>
+                  <Sparkles className="h-5 w-5" />
+                </div>
+                <h3 className="text-lg font-bold text-white">{plan.name}</h3>
+                <p className="mt-1 text-xs text-neutral-500">{plan.subtitle}</p>
+                <div className="mt-4">
+                  <span className="text-3xl font-extrabold text-white">{price.toFixed(2)} €</span>
+                  <span className="text-sm text-neutral-500">{period === "yearly" ? "/an" : "/mois"}</span>
+                </div>
+                <ul className="mt-5 flex-1 space-y-2">
+                  {plan.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm text-neutral-400">
+                      <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-emerald-400" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <button className="btn-click pulse-ring mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#00e1ff] to-[#5865F2] px-4 py-2.5 text-sm font-bold text-[#0a0a0a] shadow-lg shadow-cyan-500/20 transition-all hover:brightness-110">
+                  Choisir <ArrowRight className="h-3.5 w-3.5" />
+                </button>
+              </div>
+            );
+          })}
+        </div>
+      ) : (
       <div className="grid gap-8 lg:grid-cols-2">
         {/* Configurator */}
         <div className="space-y-5">
@@ -321,6 +444,7 @@ export default function PricingBuilder() {
           </div>
         </div>
       </div>
+      )}
     </div>
   );
 }

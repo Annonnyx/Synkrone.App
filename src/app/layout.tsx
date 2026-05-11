@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SessionProvider } from "next-auth/react";
 import CleanExtensionAttrs from "@/components/CleanExtensionAttrs";
+import { LogoMosaicBg } from "@/components/landing/LogoMosaicBg";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,8 +26,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr" suppressHydrationWarning>
+    <html lang="fr" suppressHydrationWarning data-scroll-behavior="smooth">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0a0a0a] text-neutral-50`} suppressHydrationWarning>
+        <LogoMosaicBg />
         <SessionProvider>
           <CleanExtensionAttrs />
           {children}

@@ -1,7 +1,10 @@
 FROM node:20-alpine AS base
 
-# Dépendances système pour Prisma (openssl)
-RUN apk add --no-cache openssl bash
+# Dépendances système: openssl (Prisma), bash (terminal), openjdk (Minecraft), python3 (bots)
+RUN apk add --no-cache openssl bash openjdk17-jre python3 py3-pip
+
+# PM2 global pour gérer les processus bots/minecraft
+RUN npm install -g pm2
 
 WORKDIR /app
 

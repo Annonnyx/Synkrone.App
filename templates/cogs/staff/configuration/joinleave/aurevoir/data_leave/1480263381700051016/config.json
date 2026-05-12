@@ -1,0 +1,8 @@
+{
+    "enabled": true,
+    "channel_id": 1485312278222868511,
+    "is_private": false,
+    "embed_title": "Départ de {user}",
+    "embed_description": "Triste de te voir partir...",
+    "content_message": "{user.mention} nous a quitté.\nNous sommes désormais {guild.count}.vous m'avez déçu mais j'espère que vous avez quitter pour une bonne chose merci"
+}

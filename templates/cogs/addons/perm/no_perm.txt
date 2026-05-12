@@ -1,0 +1,16 @@
+# 🔍 **Système de Permissions Non Initialisé**
+Actuellement, aucune permission n'a été configurée sur ce serveur.
+Les commandes protégées sont donc **inaccessibles** à tous les utilisateurs.
+## 🔒 **Restrictions d'Accès Actuelles :**
+• **Seul le propriétaire du serveur** peut configurer les permissions
+• **Les rôles administrateurs n'ont PAS accès** aux commandes protégées
+• **Aucune commande** n'est fonctionnelle sans configuration préalable
+## 🏗️ **Stratégies de Configuration Possibles :**
+### **🎯 Option 1 - Simplifiée :**
+• Configurer **tout sur une Permission**
+• Idéal pour un serveur avec une hiérarchie simple
+### **⚖️ Option 2 - Distribuée :**
+• Répartir les accès sur **plusieurs permissions**
+• **Permission 1** est la plus forte, chaque permission a accès aux permissions inférieures
+• Permet une **hiérarchie claire** des accès par rôle
+

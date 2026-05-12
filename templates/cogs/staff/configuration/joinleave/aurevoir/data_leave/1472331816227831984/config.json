@@ -1,0 +1,8 @@
+{
+    "enabled": true,
+    "channel_id": 1474721028897898661,
+    "is_private": false,
+    "embed_title": "Départ de {user}",
+    "embed_description": "Cher utilisateur je sais pas quoi qui manque surnle serveur et vous êtes partie mais disiez le nous en mp pour corriger ça merci \n@chef de centre",
+    "content_message": "{user.mention} nous a quitté.\nNous sommes désormais {guild.count}."
+}

@@ -1,0 +1,502 @@
+[
+  {
+    "question": "1. Qu'est-ce qui a des mains mais ne peut pas applaudir ?",
+    "reponse": "une montre",
+    "indices": ["Elle donne l'heure", "Elle a des aiguilles", "On la porte au poignet"]
+  },
+  {
+    "question": "2. Qu'est-ce qui a des villes mais pas de maisons, et des montagnes mais pas d'arbres ?",
+    "reponse": "une carte",
+    "indices": ["On l'utilise pour s'orienter", "C'est souvent en papier ou numérique", "C'est une représentation du monde"]
+  },
+  {
+    "question": "3. Plus on me cherche, moins on me trouve. Qui suis-je ?",
+    "reponse": "le sommeil",
+    "indices": ["On me trouve dans un lit", "Je disparais quand on se réveille", "Je suis nécessaire pour se reposer"]
+  },
+  {
+    "question": "4. Qu'est-ce qui court mais n'a pas de jambes ?",
+    "reponse": "le nez",
+    "indices": ["Il fait partie du visage", "On l'utilise pour sentir", "On le mouche quand on est malade"]
+  },
+  {
+    "question": "5. Qu'est-ce qui appartient à tout le monde mais que personne ne peut garder ?",
+    "reponse": "la parole",
+    "indices": ["On l'utilise pour communiquer", "On peut la donner sans la perdre", "On peut aussi la perdre par accident"]
+  },
+  {
+    "question": "6. Qu'est-ce qui est noir quand on l'achète, rouge quand on l'utilise et gris quand on le jette ?",
+    "reponse": "le charbon",
+    "indices": ["On l'utilise pour le barbecue", "Il produit de la chaleur", "Il finit en cendres"]
+  },
+  {
+    "question": "7. Qu'est-ce qui est plein de trous mais retient l'eau ?",
+    "reponse": "une éponge",
+    "indices": ["On l'utilise pour nettoyer", "Elle est très absorbante", "Elle devient lourde quand elle est pleine"]
+  },
+  {
+    "question": "8. Qu'est-ce qui a un œil mais ne peut pas voir ?",
+    "reponse": "une aiguille",
+    "indices": ["On l'utilise pour coudre", "Elle est très fine", "Le fil passe à travers son chas"]
+  },
+  {
+    "question": "9. Qu'est-ce qui tombe sans jamais se blesser ?",
+    "reponse": "la pluie",
+    "indices": ["Elle vient des nuages", "Elle mouille le sol", "Elle aide les plantes à pousser"]
+  },
+  {
+    "question": "10. Qu'est-ce qui a un chapeau mais pas de tête ?",
+    "reponse": "un champignon",
+    "indices": ["On en trouve dans la forêt", "Certains se mangent, d'autres sont toxiques", "Il a un pied"]
+  },
+  {
+    "question": "11. Qu'est-ce qui a des branches mais pas de feuilles ?",
+    "reponse": "une banque",
+    "indices": ["C'est un lieu pour l'argent", "On y trouve des guichets", "On y ouvre des comptes"]
+  },
+  {
+    "question": "12. Qu'est-ce qui est plus grand que la tour Eiffel mais ne pèse rien ?",
+    "reponse": "son ombre",
+    "indices": ["Elle change de taille selon le soleil", "Elle est toujours au sol", "Elle disparaît la nuit"]
+  },
+  {
+    "question": "13. Je ne respire jamais mais je suis vivant, je n'ai jamais soif mais je bois tout le temps. Qui suis-je ?",
+    "reponse": "un poisson",
+    "indices": ["Je vis dans l'eau", "J'ai des écailles", "J'utilise des branchies"]
+  },
+  {
+    "question": "14. Qu'est-ce qui a une jambe mais ne peut pas marcher ?",
+    "reponse": "un champignon",
+    "indices": ["Il pousse dans l'ombre", "Il a aussi un chapeau", "On le cueille en automne"]
+  },
+  {
+    "question": "15. Qu'est-ce qui peut être cassé sans être touché ?",
+    "reponse": "le silence",
+    "indices": ["On le rompt en parlant", "C'est l'absence de bruit", "Il est d'or selon le proverbe"]
+  },
+  {
+    "question": "16. Qu'est-ce qui a des dents mais ne peut pas mâcher ?",
+    "reponse": "une scie",
+    "indices": ["C'est un outil de bricolage", "Elle sert à couper le bois", "Elle fait des va-et-vient"]
+  },
+  {
+    "question": "17. Je commence par un T, je finis par un T et je suis rempli de thé. Qui suis-je ?",
+    "reponse": "une théière",
+    "indices": ["C'est un objet de cuisine", "Elle a un bec verseur", "On l'utilise pour l'infusion"]
+  },
+  {
+    "question": "18. Qu'est-ce qui vole sans ailes et pleure sans yeux ?",
+    "reponse": "un nuage",
+    "indices": ["Il est dans le ciel", "Il transporte la pluie", "Il peut être blanc ou gris"]
+  },
+  {
+    "question": "19. Qu'est-ce qui a des pieds mais ne marche pas ?",
+    "reponse": "une table",
+    "indices": ["On mange dessus", "Elle en a souvent quatre", "Elle est dans la salle à manger"]
+  },
+  {
+    "question": "20. Qu'est-ce qui monte quand la pluie tombe ?",
+    "reponse": "un parapluie",
+    "indices": ["On l'ouvre au-dessus de sa tête", "Il nous protège de l'eau", "On le referme à l'intérieur"]
+  },
+  {
+    "question": "21. Si tu me lâches, je casse. Si tu me souris, je te souris. Qui suis-je ?",
+    "reponse": "un miroir",
+    "indices": ["On se regarde dedans", "Il reflète l'image", "Il est souvent en verre"]
+  },
+  {
+    "question": "22. Qu'est-ce qui a des oreilles mais ne peut pas entendre ?",
+    "reponse": "un champ de maïs",
+    "indices": ["On en fait du pop-corn", "C'est une plante cultivée", "On parle d'épis"]
+  },
+  {
+    "question": "23. Plus j'en ai, moins je vois. Qui suis-je ?",
+    "reponse": "l'obscurité",
+    "indices": ["C'est le contraire de la lumière", "Elle arrive quand le soleil se couche", "On l'appelle aussi le noir"]
+  },
+  {
+    "question": "24. Qu'est-ce qui peut passer devant le soleil sans faire d'ombre ?",
+    "reponse": "le vent",
+    "indices": ["On le sent mais on ne le voit pas", "Il fait bouger les feuilles", "Il peut souffler fort"]
+  },
+  {
+    "question": "25. Je suis l'unique endroit où aujourd'hui vient avant hier. Qui suis-je ?",
+    "reponse": "le dictionnaire",
+    "indices": ["C'est un livre de mots", "L'ordre est alphabétique", "On y cherche des définitions"]
+  },
+  {
+    "question": "26. Qu'est-ce qui a 13 cœurs mais aucun organe ?",
+    "reponse": "un jeu de cartes",
+    "indices": ["Il y a aussi des carreaux et des piques", "On l'utilise pour jouer au poker", "Il y a un roi et une reine"]
+  },
+  {
+    "question": "27. Qu'est-ce qui tourne autour de la maison sans jamais y entrer ?",
+    "reponse": "le soleil",
+    "indices": ["Il éclaire la journée", "Il se couche à l'ouest", "Il est au centre du système solaire"]
+  },
+  {
+    "question": "28. Qu'est-ce qui peut être mangé mais ne se cuit jamais ?",
+    "reponse": "une amende",
+    "indices": ["C'est une punition financière", "On la reçoit si on conduit trop vite", "Elle coûte de l'argent"]
+  },
+  {
+    "question": "29. Qu'est-ce qui est au milieu de Paris ?",
+    "reponse": "la lettre R",
+    "indices": ["C'est une question d'orthographe", "Elle est entre le 'A' et le 'I'", "C'est la troisième lettre du mot"]
+  },
+  {
+    "question": "30. Qu'est-ce qui a une langue mais ne peut pas parler ?",
+    "reponse": "une chaussure",
+    "indices": ["On la met aux pieds", "Elle a aussi des lacets", "Elle protège quand on marche"]
+  },
+  {
+    "question": "31. Qu'est-ce qui court très vite, n'a pas de jambes et ne peut jamais reculer ?",
+    "reponse": "le temps",
+    "indices": ["Il passe sans cesse", "On le mesure avec une horloge", "Une fois perdu, on ne le rattrape pas"]
+  },
+  {
+    "question": "32. Qu'est-ce qui est à toi, mais que tes amis utilisent plus que toi ?",
+    "reponse": "ton numéro de téléphone",
+    "indices": ["Il permet de t'appeler", "Il est composé de chiffres", "On l'enregistre dans ses contacts"]
+  },
+  {
+    "question": "33. Je suis là au début de l'amour et à la fin de la peur. Qui suis-je ?",
+    "reponse": "la lettre R",
+    "indices": ["C'est un jeu sur les mots", "Je suis dans l'alphabet", "Regarde la dernière lettre de 'peur'"]
+  },
+  {
+    "question": "34. Qu'est-ce qui a quatre roues et des mouches ?",
+    "reponse": "un camion poubelle",
+    "indices": ["Il passe dans les rues le matin", "Il transporte des déchets", "Il ne sent pas très bon"]
+  },
+  {
+    "question": "35. Qu'est-ce qui devient de plus en plus mouillé alors qu'il sèche ?",
+    "reponse": "une éponge",
+    "indices": ["Elle absorbe le liquide", "On l'utilise pour la vaisselle", "Elle gonfle avec l'eau"]
+  },
+  {
+    "question": "36. Qu'est-ce qui a un dos mais pas de ventre ?",
+    "reponse": "une chaise",
+    "indices": ["On s'assoit dessus", "Elle a souvent quatre pieds", "Elle fait partie du mobilier"]
+  },
+  {
+    "question": "37. Qu'est-ce qui ne peut pas parler mais répond quand on lui parle ?",
+    "reponse": "un écho",
+    "indices": ["On l'entend en montagne", "Il répète ce que l'on dit", "C'est un rebond sonore"]
+  },
+  {
+    "question": "38. Je ne possède pas de corps, mais je possède une voix. Qui suis-je ?",
+    "reponse": "le vent",
+    "indices": ["Je fais siffler les arbres", "Je peux souffler en tempête", "On m'entend mais on ne me voit pas"]
+  },
+  {
+    "question": "39. Qu'est-ce qui est aussi grand qu'un éléphant mais ne pèse rien ?",
+    "reponse": "l'ombre d'un éléphant",
+    "indices": ["Elle suit l'animal au sol", "Elle a besoin de lumière", "Elle disparaît dans le noir"]
+  },
+  {
+    "question": "40. Qu'est-ce qui a deux aiguilles mais ne sait pas coudre ?",
+    "reponse": "un réveil",
+    "indices": ["Il sonne le matin", "Il indique les heures et minutes", "Il nous empêche de dormir trop tard"]
+  },
+  {
+    "question": "41. Qu'est-ce qui commence par un P, finit par un E et contient des milliers de lettres ?",
+    "reponse": "la Poste",
+    "indices": ["C'est un service public", "On y envoie des colis", "On y trouve des facteurs"]
+  },
+  {
+    "question": "42. Qu'est-ce qui a une tête mais pas de corps, et un lit mais ne dort jamais ?",
+    "reponse": "une rivière",
+    "indices": ["L'eau y coule", "Sa tête est sa source", "Elle se jette dans un fleuve"]
+  },
+  {
+    "question": "43. Qu'est-ce qui avance en restant à la même place ?",
+    "reponse": "un escalier mécanique",
+    "indices": ["On le trouve dans les centres commerciaux", "Il monte ou il descend tout seul", "On l'appelle aussi escalator"]
+  },
+  {
+    "question": "44. Je suis plus puissant que Dieu, plus méchant que le Diable, les pauvres en ont, les riches en ont besoin. Qui suis-je ?",
+    "reponse": "rien",
+    "indices": ["C'est un concept de vide", "Rien n'est plus puissant que Dieu", "Si tu ne manges rien, tu meurs"]
+  },
+  {
+    "question": "45. Qu'est-ce qui peut être rempli de doigts mais n'a pas de mains ?",
+    "reponse": "un gant",
+    "indices": ["On le porte en hiver", "Il protège du froid", "Il est souvent en laine ou cuir"]
+  },
+  {
+    "question": "46. Qu'est-ce qui traverse les vitres sans les casser ?",
+    "reponse": "la lumière",
+    "indices": ["Elle vient du soleil", "Elle éclaire une pièce", "Elle s'éteint avec un interrupteur"]
+  },
+  {
+    "question": "47. Qu'est-ce qui possède des clés que l'on ne peut pas perdre ?",
+    "reponse": "une solution",
+    "indices": ["Elle répond à un problème", "C'est la fin d'une énigme", "On la trouve après avoir cherché"]
+  },
+  {
+    "question": "48. Je suis l'enfant de ton père, mais je ne suis pas ton frère. Qui suis-je ?",
+    "reponse": "ta sœur",
+    "indices": ["C'est un lien de parenté direct", "Elle a les mêmes parents que toi", "C'est une fille"]
+  },
+  {
+    "question": "49. Qu'est-ce qui n'a pas de début, de fin, ni de milieu ?",
+    "reponse": "un cercle",
+    "indices": ["C'est une forme géométrique", "Il est parfaitement rond", "Il ressemble à un anneau"]
+  },
+  {
+    "question": "50. Qu'est-ce qui a une écorce mais pas de chien ?",
+    "reponse": "un arbre",
+    "indices": ["Il a des racines", "Il possède des feuilles ou des épines", "Il pousse dans la forêt"]
+  },
+  {
+    "question": "51. Qu'est-ce qui est toujours en retard ?",
+    "reponse": "le futur",
+    "indices": ["Il n'est jamais encore là", "Il arrive après le présent", "On ne peut pas le vivre maintenant"]
+  },
+  {
+    "question": "52. Qu'est-ce qui se casse si on le nomme ?",
+    "reponse": "le silence",
+    "indices": ["Il nécessite de ne pas faire de bruit", "Dès qu'on parle, il disparaît", "C'est un état de calme absolu"]
+  },
+  {
+    "question": "53. Qu'est-ce qui a des pieds à la tête ?",
+    "reponse": "un pou",
+    "indices": ["C'est un petit insecte", "Il gratte beaucoup", "On le trouve dans les cheveux"]
+  },
+  {
+    "question": "54. Qu'est-ce qui a des ailes mais ne vole pas, et de l'eau mais ne nage pas ?",
+    "reponse": "un moulin à eau",
+    "indices": ["Ses ailes tournent avec le courant", "Il sert à moudre le grain", "C'est une construction ancienne"]
+  },
+  {
+    "question": "55. Je monte et je descends, mais je ne bouge jamais. Qui suis-je ?",
+    "reponse": "la température",
+    "indices": ["Elle se mesure avec un thermomètre", "Elle indique s'il fait chaud ou froid", "On l'exprime en degrés"]
+  },
+  {
+    "question": "56. Qu'est-ce qui a quatre yeux mais ne peut pas voir ?",
+    "reponse": "le Mississippi",
+    "indices": ["C'est un grand fleuve", "C'est un jeu sur l'orthographe anglaise", "Il y a quatre 'i' dans son nom"]
+  },
+  {
+    "question": "57. Qu'est-ce qui se trouve une fois dans une minute, deux fois dans un moment, mais jamais dans un siècle ?",
+    "reponse": "la lettre M",
+    "indices": ["Regarde l'écriture des mots cités", "C'est une lettre de l'alphabet", "Elle est au début de 'minute'"]
+  },
+  {
+    "question": "58. Qu'est-ce qui est plus léger que l'air, mais que cent personnes ne peuvent pas soulever ?",
+    "reponse": "une bulle de savon",
+    "indices": ["Elle éclate au moindre contact", "Elle est faite d'eau et de produit", "Elle vole au vent"]
+  },
+  {
+    "question": "59. Qu'est-ce qui a une face mais pas de yeux, et des mains mais pas de bras ?",
+    "reponse": "une horloge",
+    "indices": ["On l'appelle aussi le cadran", "Ses mains sont ses aiguilles", "Elle donne l'heure"]
+  },
+  {
+    "question": "60. Qu'est-ce qui peut être entendu mais jamais vu ni touché ?",
+    "reponse": "la musique",
+    "indices": ["Elle sort d'un instrument ou d'une radio", "Elle est composée de notes", "On l'écoute avec les oreilles"]
+  },
+  {
+    "question": "61. Je suis là quand tu dors, mais je disparais quand tu te réveilles. Qui suis-je ?",
+    "reponse": "un rêve",
+    "indices": ["C'est une production de l'imagination", "Cela se passe dans ta tête la nuit", "On s'en souvient parfois le matin"]
+  },
+  {
+    "question": "62. Qu'est-ce qui a une bouche mais ne peut pas manger ?",
+    "reponse": "une grotte",
+    "indices": ["On peut y entrer pour s'abriter", "C'est une cavité naturelle", "Elle se trouve souvent dans la montagne"]
+  },
+  {
+    "question": "63. Qu'est-ce qui appartient à un homme, mais que sa femme utilise après le mariage ?",
+    "reponse": "son nom de famille",
+    "indices": ["C'est une tradition civile", "Il figure sur les papiers officiels", "Les enfants le portent aussi souvent"]
+  },
+  {
+    "question": "64. Je suis plein de clés mais je n'ai aucune serrure. Qui suis-je ?",
+    "reponse": "un clavier",
+    "indices": ["On l'utilise pour écrire sur ordinateur", "Il y a des lettres et des chiffres", "On tape dessus avec les doigts"]
+  },
+  {
+    "question": "65. Qu'est-ce qui est blanc au milieu et entouré de jaune dans une poêle ?",
+    "reponse": "un œuf au plat",
+    "indices": ["On le mange au petit-déjeuner", "Le jaune s'appelle le vitellus", "On le casse avant de le cuire"]
+  },
+  {
+    "question": "66. Plus je suis vieux, plus je suis fort. Qui suis-je ?",
+    "reponse": "le fromage",
+    "indices": ["Il s'affine avec le temps", "Certains ont une odeur puissante", "C'est un produit laitier"]
+  },
+  {
+    "question": "67. Qu'est-ce qui a des racines que personne ne voit, et est plus grand que les arbres ?",
+    "reponse": "une montagne",
+    "indices": ["Elle touche presque les nuages", "C'est un relief terrestre", "On peut y faire du ski"]
+  },
+  {
+    "question": "68. Qu'est-ce qui a un cœur qui ne bat pas ?",
+    "reponse": "un artichaut",
+    "indices": ["C'est un légume", "On mange ses feuilles et son fond", "Il a des poils à l'intérieur"]
+  },
+  {
+    "question": "69. Je vole sans ailes, je siffle sans bouche. Qui suis-je ?",
+    "reponse": "le vent",
+    "indices": ["Je fais bouger les moulins", "Je suis un courant d'air", "Je peux être une brise ou un ouragan"]
+  },
+  {
+    "question": "70. Qu'est-ce qui peut être dans l'eau sans jamais être mouillé ?",
+    "reponse": "l'ombre",
+    "indices": ["Elle est projetée par la lumière", "Elle suit les formes des objets", "Elle est noire"]
+  },
+  {
+    "question": "71. Qu'est-ce qui commence par un E et finit par un E, mais ne contient qu'un seul pays ?",
+    "reponse": "l'Espagne",
+    "indices": ["C'est un pays d'Europe", "On y parle espagnol", "Madrid est sa capitale"]
+  },
+  {
+    "question": "72. Je suis toujours devant toi mais jamais tu ne me rattrapes. Qui suis-je ?",
+    "reponse": "l'horizon",
+    "indices": ["C'est la ligne où le ciel touche la mer", "Plus tu avances, plus il s'éloigne", "C'est une limite visuelle"]
+  },
+  {
+    "question": "73. Qu'est-ce qui a une peau mais pas de corps ?",
+    "reponse": "un fruit",
+    "indices": ["On peut l'éplucher", "Il est plein de vitamines", "La banane ou l'orange en sont des exemples"]
+  },
+  {
+    "question": "74. Qu'est-ce qui grossit quand on lui donne à manger mais meurt quand on lui donne à boire ?",
+    "reponse": "le feu",
+    "indices": ["Il a besoin d'oxygène", "Il brûle le bois", "L'eau l'éteint immédiatement"]
+  },
+  {
+    "question": "75. Qu'est-ce qui a des dents sur toute sa longueur mais ne mord jamais ?",
+    "reponse": "une fermeture éclair",
+    "indices": ["On la trouve sur les vestes ou les braguettes", "On la monte ou on la descend", "On l'appelle aussi un zip"]
+  },
+  {
+    "question": "76. Je suis le seul mot qui se prononce plus court quand on lui ajoute deux lettres. Qui suis-je ?",
+    "reponse": "court",
+    "indices": ["C'est un adjectif de taille", "Si tu ajoutes 'er', cela devient 'courter' (vieilli)", "C'est un paradoxe linguistique"]
+  },
+  {
+    "question": "77. Qu'est-ce qui est tout au bout de l'arc-en-ciel ?",
+    "reponse": "la lettre L",
+    "indices": ["C'est une astuce d'orthographe", "Regarde la dernière lettre du mot", "Ce n'est pas un trésor"]
+  },
+  {
+    "question": "78. Qu'est-ce qui court mais n'a pas de jambes, et a un lit mais ne dort pas ?",
+    "reponse": "une source",
+    "indices": ["C'est le début d'un cours d'eau", "L'eau en sort naturellement", "Elle se transforme en ruisseau"]
+  },
+  {
+    "question": "79. Je suis né dans l'océan et je suis blanc comme neige, mais dès que je touche l'eau, je disparais. Qui suis-je ?",
+    "reponse": "le sel",
+    "indices": ["On l'utilise en cuisine", "Il est extrait des marais salants", "Il se dissout dans les liquides"]
+  },
+  {
+    "question": "80. Qu'est-ce qui a des aiguilles mais ne pique pas ?",
+    "reponse": "un sapin",
+    "indices": ["C'est un arbre de Noël", "Il reste vert toute l'année", "Ses feuilles sont fines et pointues"]
+  },
+  {
+    "question": "81. Qu'est-ce qui est noir, blanc et lu partout ?",
+    "reponse": "un journal",
+    "indices": ["Il contient des actualités", "Il est imprimé sur papier", "On le lit le matin avec le café"]
+  },
+  {
+    "question": "82. Qu'est-ce qui peut être dans ta poche alors qu'elle est vide ?",
+    "reponse": "un trou",
+    "indices": ["C'est une absence de matière", "Si tu y mets une pièce, elle tombe", "Il faut le recoudre"]
+  },
+  {
+    "question": "83. Qu'est-ce qui a deux têtes mais un seul corps ?",
+    "reponse": "une pièce de monnaie",
+    "indices": ["Il y a le côté face et le côté pile", "On l'utilise pour payer", "On la lance pour faire un choix"]
+  },
+  {
+    "question": "84. Je ne parle pas, mais je montre tout le monde tel qu'il est. Qui suis-je ?",
+    "reponse": "un miroir",
+    "indices": ["Il reflète la réalité", "On l'utilise pour se coiffer", "Il est souvent en verre argenté"]
+  },
+  {
+    "question": "85. Qu'est-ce qui devient blanc quand on le bat ?",
+    "reponse": "le blanc d'œuf",
+    "indices": ["On l'utilise en pâtisserie", "On dit qu'on le monte 'en neige'", "Il devient ferme et mousseux"]
+  },
+  {
+    "question": "86. Qu'est-ce qui a 4 jambes le matin et 8 jambes le soir ?",
+    "reponse": "une table de salle à manger avec ses rallonges",
+    "indices": ["C'est un meuble modulable", "On l'agrandit pour recevoir des invités", "Cela permet d'être plus nombreux à table"]
+  },
+  {
+    "question": "87. Qu'est-ce qui voyage à travers le monde en restant dans le même coin ?",
+    "reponse": "un timbre",
+    "indices": ["Il est collé sur une enveloppe", "Il a une valeur monétaire", "Il est tamponné par la poste"]
+  },
+  {
+    "question": "88. Je suis l'endroit où le jeudi vient avant le mercredi. Qui suis-je ?",
+    "reponse": "le dictionnaire",
+    "indices": ["C'est une question d'ordre alphabétique", "J vient avant M", "On y trouve tous les mots de la langue"]
+  },
+  {
+    "question": "89. Qu'est-ce qui a des marches mais ne peut pas monter ?",
+    "reponse": "un escalier",
+    "indices": ["C'est une structure fixe", "On l'utilise pour changer d'étage", "Il peut être en colimaçon"]
+  },
+  {
+    "question": "90. Qu'est-ce qui est plus utile quand il est cassé ?",
+    "reponse": "un œuf",
+    "indices": ["On ne peut pas le cuisiner entier avec sa coquille", "On le casse pour faire une omelette", "On l'utilise aussi pour les gâteaux"]
+  },
+  {
+    "question": "91. Qu'est-ce qui a un cou mais pas de tête, et porte un bouchon ?",
+    "reponse": "une bouteille",
+    "indices": ["Elle contient du vin ou de l'eau", "Elle est souvent en verre", "On la range dans une cave"]
+  },
+  {
+    "question": "92. Je suis toujours là mais personne ne m'a jamais vu. Qui suis-je ?",
+    "reponse": "l'air",
+    "indices": ["Il est indispensable pour respirer", "Il est partout autour de nous", "Il est invisible"]
+  },
+  {
+    "question": "93. Qu'est-ce qui peut être entendu mais pas touché, et qui n'a pas de corps ?",
+    "reponse": "une voix",
+    "indices": ["Elle sort de la bouche", "Chaque personne a la sienne", "Elle peut chanter ou parler"]
+  },
+  {
+    "question": "94. Qu'est-ce qui est plus grand quand il est à l'envers ?",
+    "reponse": "le chiffre 6",
+    "indices": ["Il devient un 9", "C'est un jeu visuel avec les chiffres", "Il augmente de 3 unités"]
+  },
+  {
+    "question": "95. Qu'est-ce qui a des branches mais pas de fruits ni de feuilles ?",
+    "reponse": "une banque",
+    "indices": ["C'est un établissement financier", "On y dépose son épargne", "On parle d'agences ou de succursales"]
+  },
+  {
+    "question": "96. Qu'est-ce qui peut courir mais ne peut pas marcher ?",
+    "reponse": "une rivière",
+    "indices": ["Elle suit son cours", "Elle ne possède pas de jambes", "Elle se déverse dans la mer"]
+  },
+  {
+    "question": "97. Qu'est-ce qui a un œil mais ne voit rien ?",
+    "reponse": "un cyclone",
+    "indices": ["C'est un phénomène météo puissant", "Le centre est très calme", "On l'appelle l'œil de la tempête"]
+  },
+  {
+    "question": "98. Qu'est-ce qui est lourd quand il est plein et léger quand il est troué ?",
+    "reponse": "un sac de sable",
+    "indices": ["On l'utilise pour faire des barrages", "Le contenu s'échappe par le trou", "Il devient inutile s'il est percé"]
+  },
+  {
+    "question": "99. Qu'est-ce qui ne pèse rien mais que tu peux voir à l'œil nu ?",
+    "reponse": "une bulle",
+    "indices": ["Elle est faite d'air et de savon", "Elle brille aux couleurs de l'arc-en-ciel", "Elle éclate vite"]
+  },
+  {
+    "question": "100. Qu'est-ce qui est au milieu de la Terre ?",
+    "reponse": "la lettre R",
+    "indices": ["C'est encore un jeu sur les mots", "Elle sépare le 'Te' du 're'", "C'est la troisième lettre"]
+  }
+]

@@ -1,0 +1,8 @@
+{
+    "enabled": true,
+    "channel_id": 1494095503930167489,
+    "is_private": false,
+    "embed_title": "Départ de {user}",
+    "embed_description": "On te souhaite un avenir radieux en dehors de la fami 🥺",
+    "content_message": "{user.mention} nous a quitté tu va nous manquer 😭\nNous sommes désormais {guild.count}."
+}

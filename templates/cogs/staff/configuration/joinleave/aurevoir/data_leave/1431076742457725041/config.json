@@ -1,0 +1,8 @@
+{
+    "enabled": false,
+    "channel_id": 1467511047853314068,
+    "is_private": true,
+    "embed_title": "𝗀𝗈𝗈𝖽 𝖻𝗒𝖾 {user}",
+    "embed_description": "𝑎𝑢 𝑟𝑒𝑣𝑜𝑖𝑟 𝑜𝑛 𝑒𝑠𝑝𝑒̀𝑟𝑒 𝑡𝑒 𝑟𝑒𝑣𝑜𝑖𝑟 𝑏𝑖𝑒𝑛𝑡𝑜̂𝑡 !!",
+    "content_message": "{user.mention} 𝑒𝑠𝑡 𝑝𝑎𝑟𝑡𝑖\n𝑛𝑜𝑢𝑠 𝑠𝑜𝑚𝑚𝑒𝑠 𝑚𝑎𝑖𝑛𝑡𝑒𝑛𝑎𝑛𝑡 {guild.count}."
+}

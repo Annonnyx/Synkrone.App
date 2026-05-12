@@ -1,0 +1,1504 @@
+[
+  {
+    "id": 0,
+    "nom": "Afghanistan",
+    "emoji": "🇦🇫",
+    "indices": [
+      "Le sport national est le Bouzkachi, un jeu qui se pratique à cheval.",
+      "C'est un pays montagneux situé au carrefour de l'Asie centrale et du Sud.",
+      "Les Bouddhas de Bâmiyân étaient des monuments célèbres sculptés dans la roche."
+    ]
+  },
+  {
+    "id": 1,
+    "nom": "Afrique du Sud",
+    "emoji": "🇿🇦",
+    "indices": [
+      "On l'appelle la 'Nation Arc-en-ciel' à cause de sa diversité culturelle.",
+      "Le pays possède trois capitales : Pretoria, Le Cap et Bloemfontein.",
+      "Nelson Mandela en a été le président emblématique."
+    ]
+  },
+  {
+    "id": 2,
+    "nom": "Albanie",
+    "emoji": "🇦🇱",
+    "indices": [
+      "Leur drapeau représente un aigle noir à deux têtes sur fond rouge.",
+      "C'est l'un des rares pays européens à avoir été totalement isolé pendant la guerre froide.",
+      "Le héros national se nomme Skanderbeg."
+    ]
+  },
+  {
+    "id": 3,
+    "nom": "Algérie",
+    "emoji": "🇩🇿",
+    "indices": [
+      "C'est le plus grand pays du continent africain.",
+      "On y trouve les magnifiques massifs du Hoggar dans le désert du Sahara.",
+      "Le raï est un genre musical originaire d'Oran."
+    ]
+  },
+  {
+    "id": 4,
+    "nom": "Allemagne",
+    "emoji": "🇩🇪",
+    "indices": [
+      "C'est le pays de l'Oktoberfest et de la fête de la bière.",
+      "Le Mur de Berlin a divisé sa capitale pendant près de 30 ans.",
+      "C'est la patrie de grands compositeurs comme Beethoven et Bach."
+    ]
+  },
+  {
+    "id": 5,
+    "nom": "Andorre",
+    "emoji": "🇦🇩",
+    "indices": [
+      "C'est une petite principauté située au cœur des Pyrénées.",
+      "Elle est co-gérée par le président français et l'évêque d'Urgell.",
+      "C'est le plus grand pays au monde dont la langue officielle est le catalan."
+    ]
+  },
+  {
+    "id": 6,
+    "nom": "Angola",
+    "emoji": "🇦🇴",
+    "indices": [
+      "Leur drapeau arbore une machette et une roue dentée.",
+      "C'est un pays lusophone (parle portugais) riche en pétrole.",
+      "La danse Kuduro est originaire de ce pays."
+    ]
+  },
+  {
+    "id": 7,
+    "nom": "Arabie saoudite",
+    "emoji": "🇸🇦",
+    "indices": [
+      "Le pays abrite le Rub al-Khali, l'un des plus grands déserts de sable au monde.",
+      "C'est le berceau de l'Islam et le lieu de pèlerinage de La Mecque.",
+      "On y construit la tour de Jeddah, qui vise à être la plus haute du monde."
+    ]
+  },
+  {
+    "id": 8,
+    "nom": "Argentine",
+    "emoji": "🇦🇷",
+    "indices": [
+      "C'est la terre natale du Tango et d'Astor Piazzolla.",
+      "Le pays est divisé en provinces, dont la célèbre Terre de Feu au sud.",
+      "Les Gauchos sont les cow-boys légendaires de leurs vastes plaines."
+    ]
+  },
+  {
+    "id": 9,
+    "nom": "Arménie",
+    "emoji": "🇦🇲",
+    "indices": [
+      "C'est l'un des premiers pays au monde à avoir adopté le christianisme comme religion d'État.",
+      "Le Mont Ararat est le symbole sacré du pays, bien qu'il soit situé en Turquie.",
+      "L'instrument de musique traditionnel est le doudouk, une flûte en bois d'abricotier."
+    ]
+  },
+  {
+    "id": 10,
+    "nom": "Australie",
+    "emoji": "🇦🇺",
+    "indices": [
+      "On y trouve l'Uluru (Ayers Rock), un monolithe sacré pour les aborigènes.",
+      "C'est à la fois un pays et un continent entier.",
+      "Le pays abrite la Grande Barrière de corail."
+    ]
+  },
+  {
+    "id": 11,
+    "nom": "Autriche",
+    "emoji": "🇦🇹",
+    "indices": [
+      "C'est la patrie de la célèbre impératrice Sissi.",
+      "Vienne est réputée pour ses bals impériaux et sa culture du café.",
+      "C'est un pays alpin où le ski est une véritable religion."
+    ]
+  },
+  {
+    "id": 12,
+    "nom": "Bahamas",
+    "emoji": "🇧🇸",
+    "indices": [
+      "C'est un archipel de 700 îles situé dans l'océan Atlantique.",
+      "Le pays était autrefois un refuge célèbre pour les pirates.",
+      "On peut y voir des cochons nager dans les eaux cristallines d'Exuma."
+    ]
+  },
+  {
+    "id": 13,
+    "nom": "Belgique",
+    "emoji": "🇧🇪",
+    "indices": [
+      "C'est la patrie des personnages de bande dessinée Lucky Luke et Tintin.",
+      "On y parle trois langues officielles : le français, le néerlandais et l'allemand.",
+      "Le Manneken-Pis est l'un des monuments les plus célèbres de sa capitale."
+    ]
+  },
+  {
+    "id": 14,
+    "nom": "Bhoutan",
+    "emoji": "🇧🇹",
+    "indices": [
+      "Le dragon sur leur drapeau s'appelle le 'Druk'.",
+      "Le pays mesure sa richesse par le 'Bonheur National Brut' plutôt que par le PIB.",
+      "C'est un royaume niché dans l'Himalaya où le piment est mangé comme un légume."
+    ]
+  },
+  {
+    "id": 15,
+    "nom": "Bolivie",
+    "emoji": "🇧🇴",
+    "indices": [
+      "C'est ici que se trouve le Salar de Uyuni, le plus grand désert de sel au monde.",
+      "Le pays possède deux capitales : La Paz et Sucre.",
+      "C'est un pays enclavé, sans aucun accès à la mer."
+    ]
+  },
+  {
+    "id": 16,
+    "nom": "Brésil",
+    "emoji": "🇧🇷",
+    "indices": [
+      "C'est le seul pays d'Amérique latine dont la langue officielle est le portugais.",
+      "Le fleuve Amazone traverse son immense jungle.",
+      "La Caïpirinha est son cocktail national à base de cachaça."
+    ]
+  },
+  {
+    "id": 17,
+    "nom": "Canada",
+    "emoji": "🇨🇦",
+    "indices": [
+      "C'est le pays qui possède le plus grand nombre de lacs au monde.",
+      "La Poutine, un mélange de frites, fromage et sauce, est un plat québécois célèbre.",
+      "On y produit environ 70% du sirop d'érable mondial."
+    ]
+  },
+  {
+    "id": 18,
+    "nom": "Chili",
+    "emoji": "🇨🇱",
+    "indices": [
+      "C'est le pays le plus long et le plus étroit du monde.",
+      "L'Île de Pâques et ses statues géantes (Moaï) appartiennent à ce pays.",
+      "Le désert d'Atacama est considéré comme l'un des endroits les plus secs de la Terre."
+    ]
+  },
+  {
+    "id": 19,
+    "nom": "Chine",
+    "emoji": "🇨🇳",
+    "indices": [
+      "L'armée de terre cuite de l'empereur Qin est l'un de ses trésors archéologiques.",
+      "C'est le pays d'origine du papier, de la boussole et de la poudre à canon.",
+      "La fête du Printemps (Nouvel An Lunaire) est leur célébration la plus importante."
+    ]
+  },
+  {
+    "id": 20,
+    "nom": "Colombie",
+    "emoji": "🇨🇴",
+    "indices": [
+      "C'est le deuxième pays le plus riche en biodiversité au monde.",
+      "On l'appelle 'le pays de l'Eldorado' à cause des légendes sur l'or.",
+      "C'est le premier producteur mondial d'émeraudes de haute qualité."
+    ]
+  },
+  {
+    "id": 21,
+    "nom": "Corée du Sud",
+    "emoji": "🇰🇷",
+    "indices": [
+      "Séoul est l'une des villes les plus connectées et technologiques de la planète.",
+      "On y pratique l'art de la fermentation avec le Kimchi.",
+      "Le Hanbok est leur vêtement traditionnel porté lors des grandes fêtes."
+    ]
+  },
+  {
+    "id": 22,
+    "nom": "Costa Rica",
+    "emoji": "🇨🇷",
+    "indices": [
+      "Leur devise nationale est 'Pura Vida'.",
+      "C'est l'un des rares pays au monde à ne pas avoir d'armée depuis 1948.",
+      "Le pays abrite 5% de la biodiversité mondiale sur un tout petit territoire."
+    ]
+  },
+  {
+    "id": 23,
+    "nom": "Croatie",
+    "emoji": "🇭🇷",
+    "indices": [
+      "C'est le pays d'origine de la cravate.",
+      "La ville de Dubrovnik a servi de décor à la série Game of Thrones.",
+      "Le pays possède plus de 1 000 îles le long de la mer Adriatique."
+    ]
+  },
+  {
+    "id": 24,
+    "nom": "Cuba",
+    "emoji": "🇨🇺",
+    "indices": [
+      "C'est la plus grande île des Antilles.",
+      "Le pays est célèbre pour ses voitures américaines des années 50 toujours en circulation.",
+      "C'est la patrie du cigare Habano et de la musique Salsa."
+    ]
+  },
+  {
+    "id": 25,
+    "nom": "Danemark",
+    "emoji": "🇩🇰",
+    "indices": [
+      "Leur drapeau, le Dannebrog, est considéré comme le plus vieux drapeau d'État au monde encore utilisé.",
+      "C'est le pays qui a vu naître les briques LEGO.",
+      "L'écrivain Hans Christian Andersen y a écrit ses célèbres contes comme La Petite Sirène."
+    ]
+  },
+  {
+    "id": 26,
+    "nom": "Égypte",
+    "emoji": "🇪🇬",
+    "indices": [
+      "C'est la seule des sept merveilles du monde antique encore debout qui se trouve ici.",
+      "Le canal de Suez relie la mer Méditerranée à la mer Rouge.",
+      "Le pays est le berceau de l'une des plus anciennes civilisations de l'humanité."
+    ]
+  },
+  {
+    "id": 27,
+    "nom": "Émirats arabes unis",
+    "emoji": "🇦🇪",
+    "indices": [
+      "C'est ici que se trouve le Burj Khalifa, la plus haute tour du monde.",
+      "Le pays est une fédération de sept émirats, dont Dubaï et Abou Dabi.",
+      "On y trouve des îles artificielles en forme de palmier visibles depuis l'espace."
+    ]
+  },
+  {
+    "id": 28,
+    "nom": "Équateur",
+    "emoji": "🇪🇨",
+    "indices": [
+      "Le pays doit son nom à la ligne imaginaire qui sépare les deux hémisphères.",
+      "Les îles Galápagos, célèbres pour leurs tortues géantes, appartiennent à ce pays.",
+      "C'est l'un des plus gros exportateurs de bananes au monde."
+    ]
+  },
+  {
+    "id": 29,
+    "nom": "Espagne",
+    "emoji": "🇪🇸",
+    "indices": [
+      "Le pays détient le record mondial de dons d'organes depuis plus de 30 ans.",
+      "La fête de la San Fermín est célèbre pour ses lâchers de taureaux dans les rues.",
+      "C'est le pays qui possède le plus grand nombre de vignobles au monde."
+    ]
+  },
+  {
+    "id": 30,
+    "nom": "États-Unis",
+    "emoji": "🇺🇸",
+    "indices": [
+      "Le pays possède le plus grand réseau routier au monde, dont la célèbre Route 66.",
+      "On y trouve le Grand Canyon, l'une des sept merveilles naturelles du monde.",
+      "C'est la première puissance économique mondiale."
+    ]
+  },
+  {
+    "id": 31,
+    "nom": "Éthiopie",
+    "emoji": "🇪🇹",
+    "indices": [
+      "C'est le pays d'origine du café (découvert dans la région de Kaffa).",
+      "Le pays possède son propre calendrier de 13 mois et son propre système horaire.",
+      "C'est l'un des rares pays d'Afrique à n'avoir jamais été colonisé."
+    ]
+  },
+  {
+    "id": 32,
+    "nom": "Finlande",
+    "emoji": "🇫🇮",
+    "indices": [
+      "On l'appelle le 'pays des mille lacs' (il y en a en réalité 188 000).",
+      "C'est le pays officiel du Père Noël, qui réside en Laponie.",
+      "Le pays compte plus de saunas que de voitures."
+    ]
+  },
+  {
+    "id": 33,
+    "nom": "France",
+    "emoji": "🇫🇷",
+    "indices": [
+      "C'est la destination touristique la plus visitée au monde.",
+      "Le musée du Louvre est le plus grand musée d'art et d'antiquités au monde.",
+      "On y produit plus de 1 600 variétés de fromages distinctes."
+    ]
+  },
+  {
+    "id": 34,
+    "nom": "Grèce",
+    "emoji": "🇬🇷",
+    "indices": [
+      "Le pays compte plus de 2 000 îles, dont seulement 170 sont habitées.",
+      "L'huile d'olive est surnommée 'l'or liquide' par les habitants.",
+      "Le mont Olympe était considéré comme la demeure des dieux."
+    ]
+  },
+  {
+    "id": 35,
+    "nom": "Hongrie",
+    "emoji": "🇭🇺",
+    "indices": [
+      "Le Rubik's Cube a été inventé par un architecte de ce pays.",
+      "Budapest est célèbre pour ses nombreux bains thermaux alimentés par des sources naturelles.",
+      "Le pays ne possède aucun accès à la mer, mais abrite le plus grand lac d'Europe centrale : le Balaton."
+    ]
+  },
+  {
+    "id": 36,
+    "nom": "Inde",
+    "emoji": "🇮🇳",
+    "indices": [
+      "C'est le pays qui possède la plus grande industrie cinématographique au monde (Bollywood).",
+      "Le jeu d'échecs a été inventé dans ce pays sous le nom de Chaturanga.",
+      "Le Kumbh Mela est le plus grand rassemblement humain de la planète."
+    ]
+  },
+  {
+    "id": 37,
+    "nom": "Indonésie",
+    "emoji": "🇮🇩",
+    "indices": [
+      "C'est le plus grand archipel du monde avec plus de 17 000 îles.",
+      "On y trouve le dragon de Komodo, le plus grand lézard vivant sur Terre.",
+      "Le pays compte le plus grand nombre de volcans actifs au monde."
+    ]
+  },
+  {
+    "id": 38,
+    "nom": "Irlande",
+    "emoji": "🇮🇪",
+    "indices": [
+      "On l'appelle 'l'Île Émeraude' à cause de sa verdure luxuriante.",
+      "La fête d'Halloween puise ses racines dans une ancienne fête celtique de ce pays.",
+      "La harpe est l'emblème national (on la retrouve même sur les pièces de monnaie)."
+    ]
+  },
+  {
+    "id": 39,
+    "nom": "Islande",
+    "emoji": "🇮🇸",
+    "indices": [
+      "C'est une terre de glace et de feu, riche en glaciers et en volcans.",
+      "Le pays n'a pas d'armée régulière et possède l'un des taux de criminalité les plus bas du monde.",
+      "Une grande partie de la population croit encore à l'existence des elfes et des trolls."
+    ]
+  },
+  {
+    "id": 40,
+    "nom": "Israël",
+    "emoji": "🇮🇱",
+    "indices": [
+      "C'est le seul pays au monde qui a réussi à faire revivre une langue morte (l'hébreu).",
+      "La mer Morte, point le plus bas de la Terre, se trouve à sa frontière.",
+      "Le pays possède la plus grande concentration de start-ups technologiques par habitant."
+    ]
+  },
+  {
+    "id": 41,
+    "nom": "Italie",
+    "emoji": "🇮🇹",
+    "indices": [
+      "C'est le pays qui possède le plus grand nombre de sites classés au patrimoine mondial de l'UNESCO.",
+      "Le Vatican, le plus petit État du monde, est enclavé dans sa capitale.",
+      "C'est le berceau de l'opéra et de la haute couture."
+    ]
+  },
+  {
+    "id": 42,
+    "nom": "Jamaïque",
+    "emoji": "🇯🇲",
+    "indices": [
+      "C'est le pays d'origine de la musique Reggae et de Bob Marley.",
+      "Leurs sprinteurs comptent parmi les plus rapides de l'histoire des Jeux Olympiques.",
+      "Le pays produit l'un des cafés les plus chers du monde : le Blue Mountain."
+    ]
+  },
+  {
+    "id": 43,
+    "nom": "Japon",
+    "emoji": "🇯🇵",
+    "indices": [
+      "Le pays est composé de près de 7 000 îles.",
+      "On y trouve plus de distributeurs automatiques par habitant que n'importe où ailleurs.",
+      "La ponctualité des trains y est telle que le retard moyen annuel est de quelques secondes."
+    ]
+  },
+  {
+    "id": 44,
+    "nom": "Jordanie",
+    "emoji": "🇯🇴",
+    "indices": [
+      "La cité antique de Pétra, taillée dans la roche rose, est située ici.",
+      "Le désert du Wadi Rum ressemble tellement à Mars que de nombreux films de SF y sont tournés.",
+      "L'hospitalité envers les voyageurs est une tradition bédouine sacrée dans ce pays."
+    ]
+  },
+  {
+    "id": 45,
+    "nom": "Kenya",
+    "emoji": "🇰🇪",
+    "indices": [
+      "C'est l'une des meilleures destinations au monde pour les safaris.",
+      "La réserve du Masai Mara accueille chaque année la grande migration des gnous.",
+      "Le pays est un leader mondial de l'énergie géothermique en Afrique."
+    ]
+  },
+  {
+    "id": 46,
+    "nom": "Liban",
+    "emoji": "🇱🇧",
+    "indices": [
+      "Le cèdre est le symbole national et figure au centre du drapeau.",
+      "C'est l'un des rares pays du Moyen-Orient où l'on peut skier le matin et se baigner en mer l'après-midi.",
+      "Beyrouth a été surnommée 'le Paris du Moyen-Orient'."
+    ]
+  },
+  {
+    "id": 47,
+    "nom": "Madagascar",
+    "emoji": "🇲🇬",
+    "indices": [
+      "C'est la quatrième plus grande île du monde.",
+      "On y trouve 90% d'espèces animales et végétales qui n'existent nulle part ailleurs.",
+      "L'allée des Baobabs est l'un des paysages les plus célèbres du pays."
+    ]
+  },
+  {
+    "id": 48,
+    "nom": "Malaisie",
+    "emoji": "🇲🇾",
+    "indices": [
+      "Les tours Petronas à Kuala Lumpur ont été les plus hautes du monde.",
+      "Le pays est divisé en deux parties séparées par la mer de Chine méridionale.",
+      "On y trouve la plus grande fleur du monde : la Rafflesia."
+    ]
+  },
+  {
+    "id": 49,
+    "nom": "Maldives",
+    "emoji": "🇲🇻",
+    "indices": [
+      "C'est le pays le plus plat et le plus bas du monde (altitude moyenne de 1,5m).",
+      "L'archipel est composé de 26 atolls naturels.",
+      "C'est la plus petite nation musulmane du monde en termes de superficie."
+    ]
+  },
+  {
+    "id": 50,
+    "nom": "Mali",
+    "emoji": "🇲🇱",
+    "indices": [
+      "La ville de Tombouctou était un centre intellectuel majeur au Moyen Âge.",
+      "On y trouve la Grande Mosquée de Djenné, le plus grand bâtiment en terre crue au monde.",
+      "Le pays est célèbre pour l'empire du Mali et la richesse légendaire de Mansa Moussa."
+    ]
+  },
+  {
+    "id": 51,
+    "nom": "Malte",
+    "emoji": "🇲🇹",
+    "indices": [
+      "C'est un petit archipel situé au centre de la Méditerranée.",
+      "On y trouve certains des plus anciens temples mégalithiques au monde.",
+      "Le film 'Popeye' a été tourné ici et le décor existe toujours."
+    ]
+  },
+  {
+    "id": 52,
+    "nom": "Maroc",
+    "emoji": "🇲🇦",
+    "indices": [
+      "C'est le premier producteur et exportateur mondial de sardines.",
+      "L'université Al Quaraouiyine à Fès est considérée comme la plus ancienne au monde encore en activité.",
+      "Le pays possède la plus haute station de ski d'Afrique."
+    ]
+  },
+  {
+    "id": 53,
+    "nom": "Maurice",
+    "emoji": "🇲🇺",
+    "indices": [
+      "C'était le seul habitat du Dodo, un oiseau aujourd'hui disparu.",
+      "On y trouve la 'Terre des Sept Couleurs' à Chamarel.",
+      "Le pays possède une 'cascade sous-marine' (une illusion d'optique due au sable)."
+    ]
+  },
+  {
+    "id": 54,
+    "nom": "Mexique",
+    "emoji": "🇲🇽",
+    "indices": [
+      "Le chocolat a été découvert ici par les civilisations anciennes.",
+      "C'est le pays qui compte le plus de locuteurs espagnols au monde.",
+      "La pyramide de Chichén Itzá est l'une des nouvelles sept merveilles du monde."
+    ]
+  },
+  {
+    "id": 55,
+    "nom": "Monaco",
+    "emoji": "🇲🇨",
+    "indices": [
+      "C'est le deuxième plus petit État du monde après le Vatican.",
+      "Le pays est célèbre pour son Grand Prix de Formule 1 urbain.",
+      "Il y a environ un policier pour 73 résidents, l'un des taux les plus élevés au monde."
+    ]
+  },
+  {
+    "id": 56,
+    "nom": "Mongolie",
+    "emoji": "🇲🇳",
+    "indices": [
+      "C'est le pays avec la plus faible densité de population au monde.",
+      "Une grande partie de la population vit encore dans des yourtes (Gers).",
+      "C'est la terre d'origine de Gengis Khan."
+    ]
+  },
+  {
+    "id": 57,
+    "nom": "Népal",
+    "emoji": "🇳🇵",
+    "indices": [
+      "C'est le seul pays au monde dont le drapeau n'est pas rectangulaire.",
+      "Le Mont Everest, le plus haut sommet du monde, se trouve à sa frontière.",
+      "C'est le lieu de naissance de Siddhartha Gautama, le Bouddha."
+    ]
+  },
+  {
+    "id": 58,
+    "nom": "Nigeria",
+    "emoji": "🇳🇬",
+    "indices": [
+      "C'est le pays le plus peuplé d'Afrique.",
+      "Son industrie cinématographique, Nollywood, est l'une des plus prolifiques au monde.",
+      "C'est le plus grand producteur de pétrole du continent africain."
+    ]
+  },
+  {
+    "id": 59,
+    "nom": "Norvège",
+    "emoji": "🇳🇴",
+    "indices": [
+      "Le pays possède l'un des littoraux les plus longs au monde grâce à ses fjords.",
+      "Le prix Nobel de la Paix est le seul à être remis dans ce pays (les autres sont en Suède).",
+      "Le pays a introduit le sushi au saumon au Japon dans les années 80."
+    ]
+  },
+  {
+    "id": 60,
+    "nom": "Nouvelle-Zélande",
+    "emoji": "🇳🇿",
+    "indices": [
+      "Les paysages du film 'Le Seigneur des Anneaux' ont été filmés ici.",
+      "Le rugby est quasiment une religion et l'équipe nationale fait le Haka.",
+      "C'est le premier pays au monde à avoir accordé le droit de vote aux femmes."
+    ]
+  },
+  {
+    "id": 61,
+    "nom": "Oman",
+    "emoji": "🇴🇲",
+    "indices": [
+      "C'est le plus vieil État indépendant du monde arabe.",
+      "Le pays est célèbre pour sa production d'encens de haute qualité.",
+      "Les portes des maisons y sont traditionnellement magnifiquement sculptées."
+    ]
+  },
+  {
+    "id": 62,
+    "nom": "Ouganda",
+    "emoji": "🇺🇬",
+    "indices": [
+      "On l'appelle la 'Perle de l'Afrique'.",
+      "Le pays abrite plus de la moitié de la population mondiale de gorilles des montagnes.",
+      "C'est ici que se trouve la source du Nil Blanc."
+    ]
+  },
+  {
+    "id": 63,
+    "nom": "Ouzbékistan",
+    "emoji": "🇺🇿",
+    "indices": [
+      "C'est l'un des deux seuls pays au monde 'doublement enclavés' (entouré de pays eux-mêmes enclavés).",
+      "Samarcande était une étape clé de la mythique Route de la Soie.",
+      "Le pays est célèbre pour ses coupoles bleues et ses mosaïques complexes."
+    ]
+  },
+  {
+    "id": 64,
+    "nom": "Panama",
+    "emoji": "🇵🇦",
+    "indices": [
+      "Le pays possède un canal célèbre qui relie l'Atlantique au Pacifique.",
+      "C'est le seul endroit au monde où l'on peut voir le soleil se lever sur le Pacifique et se coucher sur l'Atlantique.",
+      "Le chapeau 'Panama' est en réalité originaire de l'Équateur."
+    ]
+  },
+  {
+    "id": 65,
+    "nom": "Pays-Bas",
+    "emoji": "🇳🇱",
+    "indices": [
+      "Environ 26% du pays se trouve sous le niveau de la mer.",
+      "C'est le premier pays au monde à avoir légalisé le mariage homosexuel.",
+      "On y compte plus de vélos que d'habitants."
+    ]
+  },
+  {
+    "id": 66,
+    "nom": "Pérou",
+    "emoji": "🇵🇪",
+    "indices": [
+      "C'est la patrie de la pomme de terre (il en existe plus de 3 000 variétés).",
+      "La cité perdue du Machu Picchu est son monument le plus célèbre.",
+      "Les lignes de Nazca, visibles du ciel, restent un mystère archéologique."
+    ]
+  },
+  {
+    "id": 67,
+    "nom": "Philippines",
+    "emoji": "🇵🇭",
+    "indices": [
+      "L'archipel compte plus de 7 600 îles.",
+      "C'est la capitale mondiale du SMS (en nombre de messages envoyés).",
+      "On y trouve les 'Chocolate Hills', plus de 1 200 collines qui brunissent en été."
+    ]
+  },
+  {
+    "id": 68,
+    "nom": "Pologne",
+    "emoji": "🇵🇱",
+    "indices": [
+      "Le pays a été rayé de la carte pendant 123 ans avant de réapparaître en 1918.",
+      "Marie Curie, la célèbre scientifique, était originaire de ce pays.",
+      "On y trouve la plus vieille mine de sel au monde (Wieliczka)."
+    ]
+  },
+  {
+    "id": 69,
+    "nom": "Portugal",
+    "emoji": "🇵🇹",
+    "indices": [
+      "C'est le plus vieux pays d'Europe à avoir des frontières inchangées depuis 1139.",
+      "Le pays est le premier producteur mondial de liège.",
+      "Le Fado est leur chant traditionnel mélancolique classé à l'UNESCO."
+    ]
+  },
+  {
+    "id": 70,
+    "nom": "Qatar",
+    "emoji": "🇶🇦",
+    "indices": [
+      "Le pays possède l'un des PIB par habitant les plus élevés au monde.",
+      "C'est ici qu'a été créée la chaîne de télévision Al Jazeera.",
+      "Les courses de chameaux avec des robots jockeys y sont un sport populaire."
+    ]
+  },
+  {
+    "id": 71,
+    "nom": "Roumanie",
+    "emoji": "🇷🇴",
+    "indices": [
+      "C'est la terre de la légende de Dracula (en Transylvanie).",
+      "Le Palais du Parlement à Bucarest est le deuxième plus grand bâtiment administratif au monde.",
+      "Le pays possède l'une des populations d'ours bruns les plus importantes d'Europe."
+    ]
+  },
+  {
+    "id": 72,
+    "nom": "Royaume-Uni",
+    "emoji": "🇬🇧",
+    "indices": [
+      "C'est ici qu'est née la révolution industrielle.",
+      "Le pays n'a pas de constitution écrite unique.",
+      "Le français a été la langue officielle du pays pendant près de 300 ans."
+    ]
+  },
+  {
+    "id": 73,
+    "nom": "Sénégal",
+    "emoji": "🇸🇳",
+    "indices": [
+      "L'île de Gorée y est un lieu de mémoire historique majeur.",
+      "On y trouve le lac Rose, dont la couleur est due à une algue particulière.",
+      "La 'Teranga' (hospitalité) est une valeur fondamentale de la culture du pays."
+    ]
+  },
+  {
+    "id": 74,
+    "nom": "Serbie",
+    "emoji": "🇷🇸",
+    "indices": [
+      "C'est la patrie du célèbre inventeur Nikola Tesla.",
+      "Le pays est l'un des plus grands exportateurs de framboises au monde.",
+      "Sa capitale, Belgrade, est l'une des plus anciennes villes d'Europe."
+    ]
+  },
+  {
+    "id": 75,
+    "nom": "Singapour",
+    "emoji": "🇸🇬",
+    "indices": [
+      "C'est une ville-État composée de 63 îles.",
+      "Il est interdit d'y importer ou de mâcher du chewing-gum pour garder les rues propres.",
+      "Le 'Merlion' (mi-lion, mi-poisson) est le symbole de la nation."
+    ]
+  },
+  {
+    "id": 76,
+    "nom": "Slovaquie",
+    "emoji": "🇸🇰",
+    "indices": [
+      "C'est le pays qui produit le plus de voitures par habitant au monde.",
+      "Le pays compte plus de 6 000 grottes explorées.",
+      "On y trouve le centre géographique (théorique) de l'Europe."
+    ]
+  },
+  {
+    "id": 77,
+    "nom": "Slovénie",
+    "emoji": "🇸🇮",
+    "indices": [
+      "C'est le seul pays au monde dont le nom contient le mot 'LOVE'.",
+      "Le lac de Bled avec son église sur une île est son image la plus iconique.",
+      "Plus de la moitié du territoire est recouverte de forêts protégées."
+    ]
+  },
+  {
+    "id": 78,
+    "nom": "Soudan",
+    "emoji": "🇸🇩",
+    "indices": [
+      "Le pays possède plus de pyramides que l'Égypte (plus de 200).",
+      "C'est ici que le Nil Blanc et le Nil Bleu se rejoignent.",
+      "C'était autrefois le plus grand pays d'Afrique avant sa scission en 2011."
+    ]
+  },
+  {
+    "id": 79,
+    "nom": "Sri Lanka",
+    "emoji": "🇱🇰",
+    "indices": [
+      "On l'appelait autrefois l'île de Ceylan.",
+      "C'est l'un des plus grands exportateurs de thé au monde.",
+      "Le drapeau arbore un lion tenant une épée."
+    ]
+  },
+  {
+    "id": 80,
+    "nom": "Suède",
+    "emoji": "🇸🇪",
+    "indices": [
+      "C'est le pays d'origine du groupe ABBA et du mobilier IKEA.",
+      "Le pays importe des déchets d'autres pays pour alimenter ses usines de recyclage énergétique.",
+      "C'est la patrie d'Alfred Nobel, l'inventeur de la dynamite."
+    ]
+  },
+  {
+    "id": 81,
+    "nom": "Suisse",
+    "emoji": "🇨🇭",
+    "indices": [
+      "Le pays possède 4 langues nationales : l'allemand, le français, l'italien et le romanche.",
+      "C'est le pays du chocolat, des montres et de la fondue.",
+      "Le drapeau national est l'un des deux seuls au monde à être de forme carrée."
+    ]
+  },
+  {
+    "id": 82,
+    "nom": "Syrie",
+    "emoji": "🇸🇾",
+    "indices": [
+      "Sa capitale, Damas, est souvent considérée comme la plus ancienne ville habitée au monde.",
+      "L'alphabet ougaritique, l'un des premiers de l'histoire, y a été découvert.",
+      "Le Krak des Chevaliers est l'un des châteaux médiévaux les mieux conservés au monde."
+    ]
+  },
+  {
+    "id": 83,
+    "nom": "Tanzanie",
+    "emoji": "🇹🇿",
+    "indices": [
+      "Le Mont Kilimandjaro, point culminant de l'Afrique, se trouve ici.",
+      "L'île de Zanzibar est célèbre pour ses épices et ses plages de sable blanc.",
+      "Freddie Mercury, le chanteur de Queen, est né dans ce pays."
+    ]
+  },
+  {
+    "id": 84,
+    "nom": "Thaïlande",
+    "emoji": "🇹🇭",
+    "indices": [
+      "C'est le seul pays d'Asie du Sud-Est à n'avoir jamais été colonisé par une puissance européenne.",
+      "On l'appelle souvent le 'Pays du Sourire'.",
+      "Le pays s'appelait autrefois le Royaume de Siam."
+    ]
+  },
+  {
+    "id": 85,
+    "nom": "Tunisie",
+    "emoji": "🇹🇳",
+    "indices": [
+      "L'ancienne cité de Carthage, rivale de Rome, se trouvait ici.",
+      "Le village de Sidi Bou Saïd est célèbre pour ses maisons bleues et blanches.",
+      "De nombreuses scènes de la saga 'Star Wars' ont été tournées dans son désert."
+    ]
+  },
+  {
+    "id": 86,
+    "nom": "Turquie",
+    "emoji": "🇹🇷",
+    "indices": [
+      "Istanbul est la seule ville au monde située sur deux continents à la fois.",
+      "Le père Noël (Saint Nicolas) est né dans ce pays, pas au pôle Nord.",
+      "Le pays possède l'un des plus vieux et des plus grands marchés couverts du monde : le Grand Bazar."
+    ]
+  },
+  {
+    "id": 87,
+    "nom": "Ukraine",
+    "emoji": "🇺🇦",
+    "indices": [
+      "On l'appelle le 'grenier à blé de l'Europe' à cause de ses terres fertiles.",
+      "L'instrument national est la bandoura, un instrument à cordes pincées.",
+      "C'est le pays où se trouve la zone d'exclusion de Tchernobyl."
+    ]
+  },
+  {
+    "id": 88,
+    "nom": "Uruguay",
+    "emoji": "🇺🇾",
+    "indices": [
+      "C'est le pays qui a organisé et remporté la toute première Coupe du Monde de football en 1930.",
+      "On y compte environ trois vaches pour chaque habitant.",
+      "Le pays est l'un des plus progressistes d'Amérique latine."
+    ]
+  },
+  {
+    "id": 89,
+    "nom": "Vatican",
+    "emoji": "🇻🇦",
+    "indices": [
+      "C'est le plus petit État indépendant au monde, tant par sa superficie que par sa population.",
+      "C'est le seul État au monde où la langue officielle des distributeurs de billets est le latin.",
+      "Le pays n'a pas de système fiscal et vit principalement de dons et de tourisme."
+    ]
+  },
+  {
+    "id": 90,
+    "nom": "Venezuela",
+    "emoji": "🇻🇪",
+    "indices": [
+      "Le Salto Ángel est la plus haute chute d'eau du monde.",
+      "Le pays possède les plus grandes réserves de pétrole prouvées de la planète.",
+      "On y observe le phénomène des 'éclairs du Catatumbo', des orages quasi permanents."
+    ]
+  },
+  {
+    "id": 91,
+    "nom": "Vietnam",
+    "emoji": "🇻🇳",
+    "indices": [
+      "C'est le deuxième plus grand producteur de café au monde après le Brésil.",
+      "La baie d'Ha Long compte près de 2 000 îles calcaires émergeant de la mer.",
+      "Leur chapeau traditionnel de forme conique s'appelle le 'Nón Lá'."
+    ]
+  },
+  {
+    "id": 92,
+    "nom": "Yémen",
+    "emoji": "🇾🇪",
+    "indices": [
+      "La ville de Shibam est surnommée le 'Manhattan du désert' pour ses immeubles en terre cuite.",
+      "L'île de Socotra abrite des arbres étranges appelés 'Dragonniers de Socotra'.",
+      "Le café 'Moka' tire son nom d'une ville portuaire de ce pays."
+    ]
+  },
+  {
+    "id": 93,
+    "nom": "Zambie",
+    "emoji": "🇿🇲",
+    "indices": [
+      "Les chutes Victoria, l'une des plus grandes cascades du monde, se situent à sa frontière.",
+      "C'est l'un des principaux producteurs mondiaux de cuivre.",
+      "Le pays tire son nom du fleuve Zambèze."
+    ]
+  },
+  {
+    "id": 94,
+    "nom": "Zimbabwe",
+    "emoji": "🇿🇼",
+    "indices": [
+      "On y trouve les ruines du 'Grand Zimbabwe', une cité médiévale en pierre.",
+      "Le pays a connu l'une des pires hyperinflations de l'histoire moderne.",
+      "L'oiseau sculpté sur leur drapeau représente une statuette retrouvée dans les ruines antiques."
+    ]
+  },
+  {
+    "id": 95,
+    "nom": "Azerbaïdjan",
+    "emoji": "🇦🇿",
+    "indices": [
+      "On l'appelle la 'Terre de Feu' à cause de ses feux de gaz naturels qui brûlent en permanence.",
+      "Sa capitale, Bakou, possède une architecture qui mélange futurisme et cité médiévale.",
+      "C'est ici qu'on trouve la plus grande concentration de volcans de boue au monde."
+    ]
+  },
+  {
+    "id": 96,
+    "nom": "Bangladesh",
+    "emoji": "🇧🇩",
+    "indices": [
+      "C'est l'un des pays les plus densément peuplés de la planète.",
+      "On y trouve la plus longue plage de sable ininterrompue au monde (Cox's Bazar).",
+      "Le tigre du Bengale est l'animal national du pays."
+    ]
+  },
+  {
+    "id": 97,
+    "nom": "Biélorussie",
+    "emoji": "🇧🇾",
+    "indices": [
+      "On l'appelle parfois 'les poumons de l'Europe' à cause de ses immenses forêts primaires.",
+      "Le pays est célèbre pour ses châteaux médiévaux comme celui de Mir.",
+      "C'est l'un des derniers pays d'Europe à pratiquer encore la peine de mort."
+    ]
+  },
+  {
+    "id": 98,
+    "nom": "Birmanie",
+    "emoji": "🇲🇲",
+    "indices": [
+      "On l'appelle aussi le Myanmar.",
+      "La plaine de Bagan compte plus de 2 000 temples et pagodes bouddhistes.",
+      "Les hommes et les femmes y portent traditionnellement le 'longyi', une sorte de paréo."
+    ]
+  },
+  {
+    "id": 99,
+    "nom": "Bosnie-Herzégovine",
+    "emoji": "🇧🇦",
+    "indices": [
+      "Le pont de Mostar (Stari Most) est le symbole de la reconstruction du pays.",
+      "Sa capitale, Sarajevo, a accueilli les Jeux Olympiques d'hiver en 1984.",
+      "Le pays possède une minuscule côte de 20 km sur la mer Adriatique."
+    ]
+  },
+  {
+    "id": 100,
+    "nom": "Botswana",
+    "emoji": "🇧🇼",
+    "indices": [
+      "C'est l'un des plus grands producteurs de diamants au monde.",
+      "Le delta de l'Okavango est l'un des rares deltas intérieurs qui ne se jette pas dans la mer.",
+      "Le désert du Kalahari occupe 70% de la surface du pays."
+    ]
+  },
+  {
+    "id": 101,
+    "nom": "Bulgarie",
+    "emoji": "🇧🇬",
+    "indices": [
+      "Le pays est le premier producteur mondial d'huile de rose.",
+      "C'est ici qu'a été inventé l'alphabet cyrillique au IXe siècle.",
+      "On y trouve les plus anciens trésors d'or travaillés au monde (nécropole de Varna)."
+    ]
+  },
+  {
+    "id": 102,
+    "nom": "Cambodge",
+    "emoji": "🇰🇭",
+    "indices": [
+      "Le temple d'Angkor Wat est représenté sur le drapeau national.",
+      "Le lac Tonlé Sap change de sens d'écoulement deux fois par an.",
+      "Le pays a connu une période tragique sous le régime des Khmers rouges."
+    ]
+  },
+  {
+    "id": 103,
+    "nom": "Cameroun",
+    "emoji": "🇨🇲",
+    "indices": [
+      "On le surnomme 'l'Afrique en miniature' pour sa diversité de paysages.",
+      "Le pays possède un volcan actif, le Mont Cameroun, point culminant de l'Afrique de l'Ouest.",
+      "Leur équipe de football est surnommée les 'Lions Indomptables'."
+    ]
+  },
+  {
+    "id": 104,
+    "nom": "Chypre",
+    "emoji": "🇨🇾",
+    "indices": [
+      "C'est la mythique île de naissance d'Aphrodite, la déesse de l'amour.",
+      "Le pays est divisé en deux par une zone tampon gérée par l'ONU (la ligne verte).",
+      "Le fromage Halloumi est originaire de cette île."
+    ]
+  },
+  {
+    "id": 105,
+    "nom": "Congo",
+    "emoji": "🇨g",
+    "indices": [
+      "On parle ici de la République démocratique du Congo (Kinshasa).",
+      "Le fleuve Congo est le deuxième plus puissant au monde après l'Amazone.",
+      "C'est le pays qui possède les plus grandes réserves de coltan, essentiel pour nos smartphones."
+    ]
+  },
+  {
+    "id": 106,
+    "nom": "Corée du Nord",
+    "emoji": "🇰🇵",
+    "indices": [
+      "C'est le pays le plus fermé et le plus secret au monde.",
+      "Le pays possède le plus grand stade du monde (stade du Premier-Mai).",
+      "La zone démilitarisée (DMZ) qui le sépare de son voisin du sud est l'une des frontières les plus gardées."
+    ]
+  },
+  {
+    "id": 107,
+    "nom": "Côte d'Ivoire",
+    "emoji": "🇨🇮",
+    "indices": [
+      "C'est le premier producteur mondial de cacao.",
+      "La Basilique Notre-Dame de la Paix à Yamoussoukro est la plus grande église chrétienne au monde.",
+      "Leur drapeau est l'inverse exact de celui de l'Irlande."
+    ]
+  },
+  {
+    "id": 108,
+    "nom": "Estonie",
+    "emoji": "🇪🇪",
+    "indices": [
+      "C'est l'un des pays les plus digitalisés au monde (vote en ligne, e-citoyenneté).",
+      "Le logiciel Skype a été créé par des développeurs de ce pays.",
+      "Le pays compte plus de 2 000 îles dans la mer Baltique."
+    ]
+  },
+  {
+    "id": 109,
+    "nom": "Géorgie",
+    "emoji": "🇬🇪",
+    "indices": [
+      "C'est l'un des plus anciens pays producteurs de vin au monde (depuis 8 000 ans).",
+      "Leur alphabet est unique au monde et ne ressemble à aucun autre.",
+      "Le Caucase offre des paysages de montagnes spectaculaires avec des villages médiévaux."
+    ]
+  },
+  {
+    "id": 110,
+    "nom": "Ghana",
+    "emoji": "🇬🇭",
+    "indices": [
+      "C'était le premier pays d'Afrique subsaharienne à obtenir son indépendance en 1957.",
+      "Le pays est célèbre pour ses cercueils personnalisés en forme d'objets ou d'animaux.",
+      "Le lac Volta est l'un des plus grands lacs artificiels au monde."
+    ]
+  },
+  {
+    "id": 111,
+    "nom": "Guatemala",
+    "emoji": "🇬🇹",
+    "indices": [
+      "C'est le cœur de l'ancienne civilisation Maya.",
+      "Le Quetzal est à la fois l'oiseau national et le nom de leur monnaie.",
+      "Le pays possède 37 volcans, dont plusieurs sont très actifs."
+    ]
+  },
+  {
+    "id": 112,
+    "nom": "Haïti",
+    "emoji": "🇭🇹",
+    "indices": [
+      "C'est la première république noire indépendante au monde (1804).",
+      "Le créole haïtien et le français sont les deux langues officielles.",
+      "La Citadelle La Ferrière est la plus grande forteresse des Caraïbes."
+    ]
+  },
+  {
+    "id": 113,
+    "nom": "Honduras",
+    "emoji": "🇭🇳",
+    "indices": [
+      "Le pays était autrefois surnommé la 'République bananière'.",
+      "On y trouve les ruines mayas de Copán, célèbres pour leurs stèles sculptées.",
+      "On y observe parfois une 'pluie de poissons' (Lluvia de Peces) dans la ville de Yoro."
+    ]
+  },
+  {
+    "id": 114,
+    "nom": "Irak",
+    "emoji": "🇮🇶",
+    "indices": [
+      "C'est le berceau de la Mésopotamie, où l'écriture a été inventée.",
+      "Les jardins suspendus de Babylone se trouvaient dans ce pays.",
+      "Le pays possède les quatrièmes plus grandes réserves de pétrole au monde."
+    ]
+  },
+  {
+    "id": 115,
+    "nom": "Iran",
+    "emoji": "🇮🇷",
+    "indices": [
+      "C'était autrefois l'Empire Perse.",
+      "C'est le pays d'origine des tapis les plus fins et les plus chers du monde.",
+      "Le calendrier iranien est un calendrier solaire plus précis que le calendrier grégorien."
+    ]
+  },
+  {
+    "id": 116,
+    "nom": "Kazakhstan",
+    "emoji": "🇰🇿",
+    "indices": [
+      "C'est le plus grand pays enclavé au monde (sans accès à la mer libre).",
+      "C'est de ce pays que partent les fusées russes vers l'espace (cosmodrome de Baïkonour).",
+      "On pense que la pomme est originaire des montagnes de ce pays."
+    ]
+  },
+  {
+    "id": 117,
+    "nom": "Koweït",
+    "emoji": "🇰🇼",
+    "indices": [
+      "Le dinar koweïtien est la monnaie ayant la plus haute valeur au monde.",
+      "Le pays possède environ 10% des réserves mondiales de pétrole.",
+      "Les 'Kuwait Towers' sont le symbole architectural du pays."
+    ]
+  },
+  {
+    "id": 118,
+    "nom": "Laos",
+    "emoji": "🇱🇦",
+    "indices": [
+      "C'est le seul pays d'Asie du Sud-Est qui n'a pas d'accès à la mer.",
+      "On l'appelait autrefois le 'Royaume au million d'éléphants'.",
+      "La 'Plaine des Jarres' est un site archéologique mystérieux avec des milliers de jarres en pierre."
+    ]
+  },
+  {
+    "id": 119,
+    "nom": "Lettonie",
+    "emoji": "🇱🇻",
+    "indices": [
+      "Le pays possède l'un des drapeaux les plus anciens au monde (utilisé depuis 1280).",
+      "Sa capitale, Riga, possède la plus grande concentration de bâtiments Art nouveau en Europe.",
+      "Le pays possède plus de 500 km de plages de sable fin."
+    ]
+  },
+  {
+    "id": 120,
+    "nom": "Libéria",
+    "emoji": "🇱🇷",
+    "indices": [
+      "C'est la plus ancienne république d'Afrique, fondée par des esclaves américains libérés.",
+      "Son drapeau ressemble énormément à celui des États-Unis, mais avec une seule étoile.",
+      "C'est l'un des trois seuls pays au monde à ne pas utiliser officiellement le système métrique."
+    ]
+  },
+  {
+    "id": 121,
+    "nom": "Libye",
+    "emoji": "🇱🇾",
+    "indices": [
+      "Le pays a possédé pendant 34 ans le seul drapeau au monde d'une seule couleur unie (vert).",
+      "On y trouve les ruines de Leptis Magna, l'une des cités romaines les mieux conservées.",
+      "C'est l'un des pays les plus arides au monde, recouvert à 90% par le Sahara."
+    ]
+  },
+  {
+    "id": 122,
+    "nom": "Liechtenstein",
+    "emoji": "🇱🇮",
+    "indices": [
+      "C'est le seul pays au monde situé entièrement dans les Alpes.",
+      "C'est le premier producteur mondial de fausses dents.",
+      "Le pays n'a pas d'armée et possède l'un des taux de criminalité les plus bas de la planète."
+    ]
+  },
+  {
+    "id": 123,
+    "nom": "Lituanie",
+    "emoji": "🇱🇹",
+    "indices": [
+      "Le lituanien est l'une des langues vivantes les plus anciennes et les plus proches du sanskrit.",
+      "Le sport national est le basket-ball, une véritable religion là-bas.",
+      "On y trouve la 'Colline des Croix', un lieu de pèlerinage avec plus de 100 000 croix."
+    ]
+  },
+  {
+    "id": 124,
+    "nom": "Luxembourg",
+    "emoji": "🇱🇺",
+    "indices": [
+      "C'est le premier pays au monde à avoir rendu tous les transports publics gratuits.",
+      "C'est le seul Grand-Duché souverain encore existant au monde.",
+      "C'est l'un des trois sièges officiels de l'Union européenne."
+    ]
+  },
+  {
+    "id": 125,
+    "nom": "Macédoine du Nord",
+    "emoji": "🇲🇰",
+    "indices": [
+      "Le pays a dû changer de nom en 2019 suite à un accord avec la Grèce.",
+      "C'est le lieu de naissance de Mère Teresa.",
+      "Le lac d'Ohrid est l'un des plus vieux et des plus profonds d'Europe."
+    ]
+  },
+  {
+    "id": 126,
+    "nom": "Malawi",
+    "emoji": "🇲🇼",
+    "indices": [
+      "On le surnomme 'le cœur chaud de l'Afrique' à cause de la gentillesse de ses habitants.",
+      "Le pays est dominé par un immense lac qui abrite plus d'espèces de poissons que n'importe quel autre lac.",
+      "Le thé et le tabac sont ses principales exportations."
+    ]
+  },
+  {
+    "id": 127,
+    "nom": "Mauritanie",
+    "emoji": "🇲🇷",
+    "indices": [
+      "C'est ici que circule l'un des trains les plus longs et les plus lourds du monde (le train du fer).",
+      "Le pays possède 'l'Œil de l'Afrique', une formation géologique géante visible depuis l'espace.",
+      "C'est l'un des derniers pays à avoir officiellement aboli l'esclavage (en 1981)."
+    ]
+  },
+  {
+    "id": 128,
+    "nom": "Moldavie",
+    "emoji": "🇲🇩",
+    "indices": [
+      "C'est le pays le moins visité d'Europe, ce qui en fait un trésor caché pour les voyageurs.",
+      "Le pays possède les plus grandes caves à vin du monde (Mileștii Mici).",
+      "La langue officielle est le roumain."
+    ]
+  },
+  {
+    "id": 129,
+    "nom": "Monténégro",
+    "emoji": "🇲🇪",
+    "indices": [
+      "Le nom du pays signifie littéralement 'Montagne Noire'.",
+      "Les bouches de Kotor forment le fjord le plus méridional d'Europe.",
+      "Le pays utilise l'Euro comme monnaie officielle bien qu'il ne soit pas dans l'Union européenne."
+    ]
+  },
+  {
+    "id": 130,
+    "nom": "Mozambique",
+    "emoji": "🇲🇿",
+    "indices": [
+      "C'est le seul drapeau au monde à arborer un fusil d'assaut moderne (AK-47).",
+      "Le pays possède plus de 2 500 km de côtes sur l'océan Indien.",
+      "C'est le seul pays du Commonwealth à n'avoir jamais été une colonie britannique."
+    ]
+  },
+  {
+    "id": 131,
+    "nom": "Namibie",
+    "emoji": "🇳🇦",
+    "indices": [
+      "Le désert du Namib est considéré comme le plus vieux désert du monde.",
+      "C'est le premier pays au monde à avoir inclus la protection de l'environnement dans sa constitution.",
+      "On y trouve la plus grande population de guépards en liberté au monde."
+    ]
+  },
+  {
+    "id": 132,
+    "nom": "Nicaragua",
+    "emoji": "🇳🇮",
+    "indices": [
+      "Le pays possède le seul lac d'eau douce au monde abritant des requins.",
+      "On y pratique le 'Volcano Boarding', qui consiste à descendre des volcans en luge.",
+      "C'est le plus grand pays d'Amérique centrale par sa superficie."
+    ]
+  },
+  {
+    "id": 133,
+    "nom": "Niger",
+    "emoji": "🇳🇪",
+    "indices": [
+      "C'est le pays où l'on trouve les plus grandes réserves d'uranium d'Afrique.",
+      "On l'appelle souvent 'le pays des dinosaures' à cause des nombreux fossiles trouvés dans son désert.",
+      "Le fleuve éponyme est la principale source de vie du pays."
+    ]
+  },
+  {
+    "id": 134,
+    "nom": "Ouganda",
+    "emoji": "🇺🇬",
+    "indices": [
+      "On le surnomme la 'Perle de l'Afrique' depuis un récit de Winston Churchill.",
+      "Le pays abrite la source officielle du Nil Blanc.",
+      "C'est l'un des rares endroits au monde où l'on peut voir des gorilles de montagne."
+    ]
+  },
+  {
+    "id": 135,
+    "nom": "Pakistan",
+    "emoji": "🇵🇰",
+    "indices": [
+      "Le pays possède le K2, le deuxième plus haut sommet du monde.",
+      "C'est ici que l'on fabrique environ 70% des ballons de football cousus main au monde.",
+      "Le pays possède le plus grand système d'irrigation par canaux au monde."
+    ]
+  },
+  {
+    "id": 136,
+    "nom": "Palestine",
+    "emoji": "🇵🇸",
+    "indices": [
+      "Jéricho est considérée comme l'une des plus anciennes villes habitées au monde.",
+      "L'olivier y est un symbole national de paix et d'attachement à la terre.",
+      "Le pays possède de nombreux lieux saints pour les trois grandes religions monothéistes."
+    ]
+  },
+  {
+    "id": 137,
+    "nom": "Papouasie-Nouvelle-Guinée",
+    "emoji": "🇵🇬",
+    "indices": [
+      "C'est le pays avec la plus grande diversité linguistique (plus de 800 langues parlées).",
+      "Le pays abrite l'oiseau de paradis, représenté sur son drapeau.",
+      "Certaines tribus y pratiquent encore des coutumes ancestrales millénaires."
+    ]
+  },
+  {
+    "id": 138,
+    "nom": "Paraguay",
+    "emoji": "🇵🇾",
+    "indices": [
+      "C'est le seul pays dont le drapeau national a deux faces différentes (le recto et le verso).",
+      "Le pays produit presque 100% de son électricité grâce à l'énergie hydroélectrique.",
+      "Le guarani est, avec l'espagnol, la langue officielle parlée par la majorité."
+    ]
+  },
+  {
+    "id": 139,
+    "nom": "République centrafricaine",
+    "emoji": "🇨🇫",
+    "indices": [
+      "Le pays possède l'un des ciels les moins pollués par la lumière, idéal pour l'astronomie.",
+      "On y trouve de vastes populations d'éléphants de forêt et de gorilles.",
+      "C'est le pays situé au centre géographique exact du continent africain."
+    ]
+  },
+  {
+    "id": 140,
+    "nom": "République dominicaine",
+    "emoji": "🇩🇴",
+    "indices": [
+      "C'est ici qu'a été fondée la première ville, la première cathédrale et la première université des Amériques.",
+      "Le Merengue et la Bachata sont des styles musicaux nés dans ce pays.",
+      "C'est le seul drapeau au monde qui contient une image de la Bible."
+    ]
+  },
+  {
+    "id": 141,
+    "nom": "République tchèque",
+    "emoji": "🇨🇿",
+    "indices": [
+      "C'est le pays où l'on consomme le plus de bière par habitant au monde.",
+      "Prague est surnommée 'la ville aux cent clochers'.",
+      "Le mot 'robot' a été inventé par un écrivain de ce pays."
+    ]
+  },
+  {
+    "id": 142,
+    "nom": "Rwanda",
+    "emoji": "🇷🇼",
+    "indices": [
+      "On l'appelle le 'Pays des mille collines'.",
+      "Le pays a interdit les sacs en plastique dès 2008, ce qui en fait l'un des plus propres d'Afrique.",
+      "C'est le pays au monde qui compte le plus haut pourcentage de femmes au parlement."
+    ]
+  },
+  {
+    "id": 143,
+    "nom": "Salvador",
+    "emoji": "🇸🇻",
+    "indices": [
+      "C'est le plus petit pays d'Amérique centrale, mais aussi le plus densément peuplé.",
+      "C'est le premier pays au monde à avoir adopté le Bitcoin comme monnaie légale.",
+      "On le surnomme la 'Terre des volcans' à cause de sa forte activité sismique."
+    ]
+  },
+  {
+    "id": 144,
+    "nom": "Sénégal",
+    "emoji": "🇸🇳",
+    "indices": [
+      "Le monument de la Renaissance africaine à Dakar est plus grand que la Statue de la Liberté.",
+      "Le baobab est l'emblème national du pays.",
+      "Saint-Louis était la première ville fondée par les Européens en Afrique de l'Ouest."
+    ]
+  },
+  { "id": 145, "nom": "Seychelles", "emoji": "🇸🇨", "indices": ["C'est l'État souverain le moins peuplé d'Afrique.", "On y trouve les célèbres 'coco-fesses', la plus grosse graine du monde.", "Le pays est un archipel de 115 îles dans l'océan Indien."] },
+  { "id": 146, "nom": "Sierra Leone", "emoji": "🇸🇱", "indices": ["Le pays possède l'un des plus grands ports naturels au monde (Freetown).", "On y trouve certains des diamants les plus purs de la planète.", "Le cotonier géant au centre de sa capitale est un symbole historique de liberté."] },
+  { "id": 147, "nom": "Somalie", "emoji": "🇸🇴", "indices": ["C'est le pays qui possède la plus longue côte de toute l'Afrique continentale.", "On l'appelle 'la nation des poètes' à cause de sa riche tradition orale.", "C'est l'un des principaux producteurs mondiaux d'encens et de myrrhe."] },
+  { "id": 148, "nom": "Soudan du Sud", "emoji": "🇸🇸", "indices": ["C'est le plus jeune pays du monde, ayant obtenu son indépendance en 2011.", "Le pays possède l'une des plus grandes zones humides du monde, le Sudd.", "Le bétail y est le symbole ultime de richesse et de statut social."] },
+  { "id": 149, "nom": "Suriname", "emoji": "🇸🇷", "indices": ["C'est le plus petit pays souverain d'Amérique du Sud.", "C'est le seul pays en dehors de l'Europe où le néerlandais est la langue officielle.", "Près de 90% du territoire est recouvert d'une forêt tropicale vierge."] },
+  { "id": 150, "nom": "Tadjikistan", "indices": ["C'est le plus petit pays d'Asie centrale par sa superficie.", "Plus de 90% du territoire est constitué de montagnes.", "Le pays possède le deuxième plus haut barrage du monde (Nourek)."], "emoji": "🇹🇯" },
+  { "id": 151, "nom": "Tchad", "emoji": "🇹🇩", "indices": ["On l'appelle le 'cœur mort de l'Afrique' à cause de son climat aride.", "Le pays abrite les spectaculaires formations rocheuses de l'Ennedi.", "Leur drapeau est identique à celui de la Roumanie."] },
+  { "id": 152, "nom": "Togo", "emoji": "🇹🇬", "indices": ["C'est l'un des plus petits pays d'Afrique, tout en longueur.", "Le marché des féticheurs d'Akodésséwa est le plus grand marché vaudou au monde.", "Le pays est l'un des principaux exportateurs mondiaux de phosphate."] },
+  { "id": 153, "nom": "Tonga", "emoji": "🇹🇴", "indices": ["C'est le seul royaume restant dans le Pacifique.", "On l'appelle les 'îles amicales' à cause de l'accueil reçu par James Cook.", "C'est l'un des premiers pays à voir le lever du soleil chaque jour."] },
+  { "id": 154, "nom": "Trinité-et-Tobago", "emoji": "🇹🇹", "indices": ["C'est le berceau de la musique Steelpan (tambours d'acier).", "Le pays possède le plus grand gisement naturel d'asphalte au monde (Pitch Lake).", "C'est ici qu'est né le genre musical Calypso."] },
+  { "id": 155, "nom": "Turkménistan", "emoji": "🇹🇲", "indices": ["On y trouve la 'Porte de l'Enfer', un cratère de gaz en feu depuis 1971.", "Le pays est célèbre pour ses chevaux Akhal-Teke, surnommés 'chevaux d'or'.", "Sa capitale, Achgabat, détient le record du monde du nombre de bâtiments en marbre blanc."] },
+  { "id": 156, "nom": "Tuvalu", "emoji": "🇹🇻", "indices": ["C'est l'un des pays les plus isolés et les moins visités du monde.", "Le pays tire une grande partie de ses revenus de la vente de son extension internet '.tv'.", "C'est l'une des nations les plus menacées par la montée du niveau des eaux."] },
+  { "id": 157, "nom": "Vanuatu", "emoji": "🇻🇺", "indices": ["On y pratique le saut du Gaul, l'ancêtre du saut à l'élastique.", "Le pays compte plus de 100 langues locales différentes.", "C'est ici que se trouve le bureau de poste sous-marin le plus célèbre."] },
+  { "id": 158, "nom": "Zambie", "emoji": "🇿🇲", "indices": ["Le pays partage les chutes Victoria avec son voisin le Zimbabwe.", "C'est l'un des rares pays au monde dont le nom dérive d'un fleuve (Zambèze).", "Le cuivre est la colonne vertébrale de son économie."] },
+  { "id": 159, "nom": "Antigua-et-Barbuda", "emoji": "🇦🇬", "indices": ["Le pays prétend posséder 365 plages, une pour chaque jour de l'année.", "Le cricket y est le sport national par excellence.", "C'est une destination de voile mondialement connue."] },
+  { "id": 160, "nom": "Bahreïn", "emoji": "🇧🇭", "indices": ["C'est un petit pays insulaire relié à l'Arabie saoudite par un pont.", "On y trouve 'l'Arbre de Vie', un arbre solitaire en plein désert sans source d'eau visible.", "C'était autrefois le centre de la pêche aux perles dans le Golfe."] },
+  { "id": 161, "nom": "Barbade", "emoji": "🇧🇧", "indices": ["C'est le lieu de naissance de la chanteuse Rihanna.", "Le pays est souvent considéré comme le berceau du rhum.", "Le trident sur leur drapeau symbolise l'indépendance vis-à-vis de la couronne britannique."] },
+  { "id": 162, "nom": "Belize", "emoji": "🇧🇿", "indices": ["C'est le seul pays d'Amérique centrale dont l'anglais est la langue officielle.", "On y trouve le 'Great Blue Hole', un gouffre sous-marin géant.", "Le pays possède la deuxième plus grande barrière de corail au monde."] },
+  { "id": 163, "nom": "Bénin", "emoji": "🇧🇯", "indices": ["C'est le berceau officiel de la religion Vaudou.", "Ganvié est une cité lacustre surnommée la 'Venise de l'Afrique'.", "Le royaume du Dahomey était célèbre pour ses guerrières Amazones."] },
+  { "id": 164, "nom": "Brunéi", "emoji": "🇧🇳", "indices": ["C'est un petit sultanat situé sur l'île de Bornéo.", "Le Sultan du pays possède l'une des plus grandes collections de voitures au monde.", "Le pays est extrêmement riche grâce à ses gisements de pétrole."] },
+  { "id": 165, "nom": "Burkina Faso", "emoji": "🇧🇫", "indices": ["Son nom signifie 'le pays des hommes intègres'.", "Ouagadougou accueille le plus grand festival de cinéma d'Afrique (FESPACO).", "Le pays ne possède aucun accès à la mer."] },
+  { "id": 166, "nom": "Burundi", "emoji": "🇧🇮", "indices": ["On l'appelle le 'pays des tambours sacrés'.", "C'est l'un des pays les plus denses d'Afrique.", "Le lac Tanganyika forme sa frontière à l'ouest."] },
+  { "id": 167, "nom": "Cap-Vert", "emoji": "🇨🇻", "indices": ["C'est un archipel d'origine volcanique au large du Sénégal.", "La chanteuse Cesária Évora est l'icône culturelle du pays.", "Le pays est l'un des plus stables et démocratiques d'Afrique."] },
+  { "id": 168, "nom": "Comores", "emoji": "🇰🇲", "indices": ["On les appelle les 'îles parfumées' à cause de la culture de l'ylang-ylang.", "C'est l'un des principaux producteurs mondiaux de vanille.", "Le pays est composé de trois îles principales situées entre l'Afrique et Madagascar."] },
+  { "id": 169, "nom": "Djibouti", "emoji": "🇩🇯", "indices": ["Le pays se situe au carrefour de la mer Rouge et de l'océan Indien.", "Le lac Assal est le point le plus bas d'Afrique et l'un des plus salés du monde.", "Le pays accueille de nombreuses bases militaires étrangères stratégiques."] },
+  { "id": 170, "nom": "Dominique", "emoji": "🇩🇲", "indices": ["On l'appelle 'l'île de la nature' des Caraïbes.", "C'est le seul pays au monde dont le drapeau contient la couleur violette (le perroquet Sisserou).", "Le pays possède le deuxième plus grand lac bouillant au monde."] },
+  { "id": 171, "nom": "Érythrée", "emoji": "🇪🇷", "indices": ["Sa capitale, Asmara, est célèbre pour son architecture futuriste italienne.", "Le pays possède une longue côte sur la mer Rouge.", "C'est l'un des pays les plus fermés au monde."] },
+  { "id": 172, "nom": "Eswatini", "emoji": "🇸🇿", "indices": ["C'est l'une des dernières monarchies absolues d'Afrique.", "Le pays s'appelait autrefois le Swaziland.", "Le festival de l'Umhlanga est une célébration culturelle majeure."] },
+  { "id": 173, "nom": "Fidji", "emoji": "🇫🇯", "indices": ["Le pays est composé de plus de 300 îles.", "Le rugby à sept est le sport national et ils sont doubles champions olympiques.", "L'eau minérale de ce pays est exportée dans le monde entier."] },
+  { "id": 174, "nom": "Gabon", "emoji": "🇬🇦", "indices": ["Près de 85% de son territoire est recouvert par la forêt tropicale.", "On l'appelle 'l'Eden de l'Afrique' pour sa faune préservée.", "C'est l'un des pays les plus riches d'Afrique grâce au pétrole et au manganèse."] },
+  { "id": 175, "nom": "Gambie", "emoji": "🇬🇲", "indices": ["C'est le plus petit pays d'Afrique continentale.", "Le territoire suit presque exactement le tracé du fleuve éponyme.", "Le pays est presque entièrement enclavé dans le Sénégal."] },
+  { "id": 176, "nom": "Grenade", "emoji": "🇬🇩", "indices": ["On l'appelle 'l'île aux épices' pour sa production massive de noix de muscade.", "La noix de muscade figure d'ailleurs sur son drapeau.", "On y trouve le premier parc de sculptures sous-marines au monde."] },
+  { "id": 177, "nom": "Guinée", "emoji": "🇬🇳", "indices": ["On l'appelle le 'château d'eau de l'Afrique de l'Ouest' car plusieurs grands fleuves y prennent source.", "Le pays possède les plus grandes réserves de bauxite au monde.", "Sa capitale est Conakry."] },
+  { "id": 178, "nom": "Guinée-Bissau", "emoji": "🇬🇼", "indices": ["Le pays possède l'archipel des Bijagos, classé réserve de biosphère.", "Le carnaval de Bissau est l'un des plus colorés d'Afrique.", "C'est une ancienne colonie portugaise."] },
+  { "id": 179, "nom": "Guinée équatoriale", "emoji": "🇬🇶", "indices": ["C'est le seul pays d'Afrique où l'espagnol est la langue officielle.", "Sa capitale est située sur une île (Bioko) et non sur le continent.", "Le pays a connu un boom économique fulgurant grâce au pétrole."] },
+  { "id": 180, "nom": "Guyana", "emoji": "🇬🇾", "indices": ["C'est le seul pays d'Amérique du Sud dont la langue officielle est l'anglais.", "Les chutes de Kaieteur sont parmi les plus puissantes du monde.", "Le pays possède d'immenses réserves d'or et de diamants."] },
+  { "id": 181, "nom": "Kiribati", "emoji": "🇰🇮", "indices": ["C'est le seul pays au monde situé à la fois sur les quatre hémisphères.", "Le pays est composé de 33 atolls éparpillés sur une immense zone océanique.", "C'est le premier pays à célébrer le passage à la nouvelle année."] },
+  { "id": 182, "nom": "Kirghizistan", "emoji": "🇰🇬", "indices": ["L'épopée de Manas, l'un des plus longs poèmes au monde, est le pilier de sa culture.", "Le pays est presque entièrement montagneux (les monts Tian Shan).", "Le lac Issyk-Koul est le deuxième plus grand lac de montagne au monde."] },
+  { "id": 183, "nom": "Lesotho", "emoji": "🇱🇸", "indices": ["C'est le seul pays au monde entièrement situé à plus de 1 000 mètres d'altitude.", "Le pays est une enclave totale au milieu de l'Afrique du Sud.", "On y trouve la station de ski la plus haute d'Afrique."] },
+  { "id": 184, "nom": "Malawi", "emoji": "🇲🇼", "indices": ["Le lac Malawi contient plus d'espèces de poissons que n'importe quel autre lac au monde.", "On le surnomme le 'cœur chaud de l'Afrique'.", "Le pays est un grand producteur de tabac et de thé."] },
+  { "id": 185, "nom": "Marshall", "emoji": "🇲🇭", "indices": ["C'est un archipel composé de plus de 1 000 îles et îlots.", "L'atoll de Bikini y a été le site de nombreux essais nucléaires américains.", "C'est l'un des pays les plus bas du monde face à l'océan."] },
+  { "id": 186, "nom": "Micronésie", "emoji": "🇫🇲", "indices": ["Le pays est célèbre pour Nan Madol, une cité antique construite sur des îlots artificiels.", "L'île de Yap est connue pour ses énormes pièces de monnaie en pierre (pierres de Rai).", "C'est une fédération de quatre États insulaires."] },
+  { "id": 187, "nom": "Nauru", "emoji": "🇳🇷", "indices": ["C'est la plus petite république du monde et la plus petite nation insulaire.", "Le pays ne possède pas de capitale officielle.", "L'économie reposait autrefois presque exclusivement sur le phosphate."] },
+  { "id": 188, "nom": "Palaos", "emoji": "🇵🇼", "indices": ["Le pays possède un lac célèbre rempli de millions de méduses inoffensives.", "C'est le premier pays au monde à avoir créé un sanctuaire pour les requins.", "Les plongeurs du monde entier viennent pour ses récifs spectaculaires."] },
+  { "id": 189, "nom": "Saint-Christophe-et-Niévès", "emoji": "🇰🇳", "indices": ["C'est le plus petit pays souverain des Amériques en superficie et population.", "C'est le premier pays à avoir lancé un programme de citoyenneté par investissement.", "Le mont Liamuiga est le point culminant de l'île."] },
+  { "id": 190, "nom": "Sainte-Lucie", "emoji": "🇱🇨", "indices": ["Les deux 'Pitons' (volcans jumeaux) sont l'emblème national.", "C'est le pays qui possède le plus de prix Nobel par habitant au monde.", "C'est une destination de lune de miel très prisée."] },
+  { "id": 191, "nom": "Saint-Vincent-et-les-Grenadines", "emoji": "🇻🇨", "indices": ["Le film 'Pirates des Caraïbes' a été en partie tourné ici.", "La Soufrière est un volcan actif qui domine l'île principale.", "Le pays est composé de 32 îles et cayes."] },
+  { "id": 192, "nom": "Samoa", "emoji": "🇼🇸", "indices": ["Le tatouage traditionnel (Pe'a) y est un rite de passage sacré.", "L'écrivain Robert Louis Stevenson y a passé les dernières années de sa vie.", "Le pays a sauté un jour entier en 2011 en changeant de fuseau horaire."] },
+  { "id": 193, "nom": "Saint-Marin", "emoji": "🇸🇲", "indices": ["C'est la plus ancienne république du monde (fondée en l'an 301).", "Le pays est entièrement enclavé dans l'Italie.", "On y trouve trois forteresses médiévales perchées au sommet du mont Titano."] },
+  { "id": 194, "nom": "Sao Tomé-et-Principe", "emoji": "🇸🇹", "indices": ["On l'appelle 'l'île chocolat' pour sa production de cacao de qualité.", "C'est le deuxième plus petit pays d'Afrique.", "Le Pico Cão Grande est une aiguille volcanique impressionnante qui surgit de la jungle."] },
+  { "id": 195, "nom": "Salomon", "emoji": "🇸🇧", "indices": ["Le pays a été le théâtre de la célèbre bataille de Guadalcanal pendant la Seconde Guerre mondiale.", "Les récifs coralliens y sont parmi les plus diversifiés au monde.", "C'est un archipel de près de 1 000 îles."] },
+  { "id": 196, "nom": "Vanuatu", "emoji": "🇻🇺", "indices": ["Le pays possède le seul bureau de poste sous-marin au monde.", "On y parle le Bichelamar, une langue créole unique.", "Le volcan Yasur est considéré comme l'un des plus accessibles au monde."] }
+]

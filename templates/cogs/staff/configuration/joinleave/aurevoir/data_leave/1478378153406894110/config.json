@@ -1,0 +1,8 @@
+{
+    "enabled": true,
+    "channel_id": null,
+    "is_private": false,
+    "embed_title": "Départ de {user}",
+    "embed_description": "Un rescapé en moin…",
+    "content_message": "{user.mention} nous a quitté.\nNous sommes désormais {guild.count}."
+}

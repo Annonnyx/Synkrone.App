@@ -1,0 +1,18 @@
+{
+    "help_embed": {
+        "title": "📚 Guide de Configuration - Au revoir",
+        "description": "Gérez les messages de départ lorsqu'un membre quitte le serveur.\n ",
+        "color": 15158332,
+        "fields": [
+            {
+                "name": "🎮 BOUTONS SPÉCIFIQUES",
+                "value": "🔒 **Visibilité** : Alterne entre un salon Public (Lecture seule) ou Privé (Caché).\n\n📝 **Texte** : Modifie le message de départ.\n\n♻️ **Reset** : Remet tout par défaut.\n "
+            },
+            {
+                "name": "✨ VARIABLES",
+                "value": "• `{user}` : Nom du membre.\n• `{guild}` : Nom du serveur.\n• `{guild.count}` : Membres restants.\n "
+            }
+        ],
+        "footer": "Système de Départ Vax 2"
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "help_embed": {
+        "title": "📚 Guide de Configuration - Bienvenue",
+        "description": "Bienvenue dans l'interface de gestion !\nVoici le détail de chaque option disponible :\n ",
+        "color": 3066993,
+        "fields": [
+            {
+                "name": "🎮 ACTIONS DES BOUTONS",
+                "value": "🔴 / 🟢 **État** : Active ou coupe le module.\n\n📝 **Texte** : Modifie Titre, Description et Message.\n\n#️⃣ **Salon** : Définit le salon d'envoi par ID.\n\n🖼️ **Image** : Change le fond par une image personnalisée.\n\n♻️ **Reset** : Remet tout par défaut (si modifié).\n "
+            },
+            {
+                "name": "✨ VARIABLES DISPONIBLES",
+                "value": "• `{user}` : Nom du membre.\n\n• `{user.mention}` : Mention du membre.\n\n• `{guild}` : Nom du serveur.\n\n• `{guild.count}` : Total de membres.\n "
+            },
+            {
+                "name": "💡 INFOS",
+                "value": "Chaque modification met à jour l'aperçu ci-dessus.\nLe bouton Reset se grise si aucune modification n'est détectée."
+            }
+        ],
+        "footer": "Système de Bienvenue Vax 2"
+    }
+}

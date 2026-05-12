@@ -1,0 +1,28 @@
+{
+    "title": "Nouveau Sondage",
+    "options": [
+        "a",
+        "z",
+        "e",
+        "r",
+        "t",
+        "y",
+        "u",
+        "i",
+        "o",
+        "p"
+    ],
+    "description": "zdzzd",
+    "channel_id": 1492792524396429324,
+    "author_id": 1487388264246677534,
+    "guild_id": 1492792521842229379,
+    "is_multiple": true,
+    "votes": {
+        "1487388264246677534": [
+            0
+        ]
+    },
+    "message_id": 1497890004637057094,
+    "created_at": 1777195154.339437,
+    "ended_at": null
+}

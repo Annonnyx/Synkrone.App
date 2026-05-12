@@ -1,0 +1,8 @@
+{
+    "enabled": true,
+    "channel_id": 1487959165170094232,
+    "is_private": false,
+    "embed_title": "Départ de {user}",
+    "embed_description": "Fdp pk tu leave clochard de merde ne remet plus jamais les pied ici. au revoir",
+    "content_message": "{user.mention} c’est casser ce clodo \nNous sommes désormais {guild.count}."
+}

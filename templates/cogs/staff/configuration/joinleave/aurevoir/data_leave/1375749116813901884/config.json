@@ -1,0 +1,8 @@
+{
+    "enabled": true,
+    "channel_id": 1471220800353861865,
+    "is_private": false,
+    "embed_title": "Départ de {user}",
+    "embed_description": "POURQUOI T PARTI ? Naaan…j’espère que le serveur t’a plus !",
+    "content_message": "{user.mention} nous a quitté.\nNous sommes désormais {guild.count}."
+}

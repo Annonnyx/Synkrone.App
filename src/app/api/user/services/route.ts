@@ -29,5 +29,11 @@ export async function GET() {
     ...user.apps.map((a) => ({ id: a.id, name: a.appName, type: "app" as const, status: a.status })),
   ];
 
-  return NextResponse.json(services);
+  return NextResponse.json({
+    bots: user.bots.map((b) => ({ id: b.id, botName: b.botName, prefix: b.prefix, status: b.status, kronesConsumed: b.kronesConsumed })),
+    minecraftServers: user.minecraftServers.map((s) => ({ id: s.id, serverName: s.serverName, status: s.status, version: s.version })),
+    sites: user.sites,
+    apps: user.apps,
+    services,
+  });
 }

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { KrBadge } from "@/components/ui/KrBadge";
+import { hasUnlimitedTokens } from "@/lib/roles";
 
 /* ─── ÉTAT ─── */
 interface ModuleDef {
@@ -132,6 +133,8 @@ export default function NewBotPage() {
   const { data: session } = useSession();
   const router = useRouter();
   const krBalance = session?.user?.kronesBalance ?? 0;
+  const userRoles = (session?.user as any)?.roles ?? [];
+  const isUnlimited = hasUnlimitedTokens(userRoles);
 
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [botName, setBotName] = useState("");
@@ -202,7 +205,7 @@ export default function NewBotPage() {
     return sum;
   }, 0);
 
-  const hasEnough = totalCost <= krBalance;
+  const hasEnough = isUnlimited || totalCost <= krBalance;
 
   function toggleModule(modId: string) {
     setExpanded((prev) => {

@@ -8,7 +8,9 @@ import { promisify } from "util";
 
 const execAsync = promisify(exec);
 const BOTS_PATH = process.env.VPS_BOTS_PATH ?? "/bots";
-const TEMPLATE_PATH = `${process.env.VPS_SHARED_PATH ?? "/Partage/Synkrone"}/templates/main.py`;
+const SHARED_PATH = process.env.VPS_SHARED_PATH ?? "/Partage/Synkrone";
+const TEMPLATE_PATH = `${SHARED_PATH}/templates/main.py`;
+const TEMPLATES_DIR = `${SHARED_PATH}/templates`;
 
 // Calcule le coût total des cogs sélectionnés
 const COGS_PRICES: Record<string, number> = {
@@ -76,9 +78,17 @@ export async function POST(req: Request) {
     // Créer le dossier du bot
     await fs.mkdir(botDir, { recursive: true });
 
-    // Copier le template main.py s'il existe
+    // Copier le template complet (main.py + cogs + requirements.txt)
     try {
-      await fs.copyFile(TEMPLATE_PATH, path.join(botDir, "main.py"));
+      const templateFiles = await fs.readdir(TEMPLATES_DIR, { recursive: true, withFileTypes: true });
+      for (const entry of templateFiles) {
+        if (entry.isDirectory()) continue;
+        const src = path.join(TEMPLATES_DIR, entry.parentPath ? path.join(entry.parentPath, entry.name) : entry.name);
+        const rel = path.relative(TEMPLATES_DIR, src);
+        const dst = path.join(botDir, rel);
+        await fs.mkdir(path.dirname(dst), { recursive: true });
+        await fs.copyFile(src, dst);
+      }
     } catch {
       // Template absent en dev local, on crée un main.py minimal
       await fs.writeFile(path.join(botDir, "main.py"), `# Bot Synkrone ${botName}\nprint("Bot démarré")\n`);
@@ -113,8 +123,15 @@ export async function POST(req: Request) {
       },
     });
 
-    // Enregistrer dans PM2 (en production)
+    // Installer dépendances Python si requirements.txt existe
     if (process.env.NODE_ENV === "production") {
+      const reqPath = path.join(botDir, "requirements.txt");
+      try {
+        await fs.access(reqPath);
+        await execAsync(`pip3 install -r ${reqPath}`);
+      } catch {
+        // Pas de requirements.txt, on ignore
+      }
       await execAsync(`cd ${botDir} && pm2 start main.py --name synkrone_${bot.id} --interpreter python3`);
     }
 

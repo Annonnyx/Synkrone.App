@@ -58,6 +58,8 @@ model Bot {
   slashCommands  Boolean   @default(false)
   cogs           String[]
   kronesConsumed Int       @default(0)
+  kronesPerMonth Int       @default(0)
+  maxGuilds      Int       @default(5)
   status         String    @default("OFFLINE")
   groupId        String?
   group          BotGroup? @relation(fields: [groupId], references: [id])

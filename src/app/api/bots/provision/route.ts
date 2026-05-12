@@ -60,6 +60,10 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Solde Kr insuffisant" }, { status: 402 });
   }
 
+  // Définir les limites selon le rôle
+  const maxGuilds = isUnlimited ? 100 : 5;
+  const kronesPerMonth = isUnlimited ? 0 : Math.max(10, cogs.length * 5);
+
   // Créer l'entrée Bot en DB
   const bot = await prisma.bot.create({
     data: {
@@ -68,6 +72,8 @@ export async function POST(req: Request) {
       prefix,
       cogs,
       kronesConsumed: totalCost,
+      kronesPerMonth,
+      maxGuilds,
       status: "OFFLINE",
       encPath: "",
       dirPath: "",
@@ -134,6 +140,7 @@ export async function POST(req: Request) {
       prefix,
       slashCommands: false,
       cogs,
+      maxGuilds,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     };

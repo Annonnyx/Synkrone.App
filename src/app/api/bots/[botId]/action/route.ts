@@ -23,17 +23,14 @@ export async function POST(req: Request, { params }: { params: Promise<{ botId: 
   const bot = await prisma.bot.findUnique({ where: { id: botId } });
   if (!bot || bot.userId !== user.id) return NextResponse.json({ error: "Bot introuvable" }, { status: 404 });
 
-  const containerName = bot.groupId ? `synkrone-bots-group-${bot.groupId}` : null;
-
   try {
-    // En environnement de production, exécuter la commande Docker supervisorctl
-    if (containerName) {
-      const supervisorAction = action === "start" ? "start" : action === "stop" ? "stop" : "restart";
-      await execAsync(`docker exec ${containerName} supervisorctl ${supervisorAction} synkrone_${bot.id}`);
+    // En production, gérer via PM2
+    if (process.env.NODE_ENV === "production" && bot.dirPath) {
+      await execAsync(`pm2 ${action} synkrone_${bot.id}`);
     }
 
     // Mettre à jour le statut en DB
-    const newStatus = action === "stop" ? "OFFLINE" : action === "start" ? "ONLINE" : bot.status;
+    const newStatus = action === "stop" ? "OFFLINE" : "ONLINE";
     await prisma.bot.update({ where: { id: bot.id }, data: { status: newStatus } });
 
     return NextResponse.json({ success: true, status: newStatus });

@@ -14,7 +14,7 @@ export async function GET(_: Request, { params }: { params: Promise<{ serverId: 
   const server = await prisma.minecraftServer.findUnique({ where: { id: serverId } });
   if (!server || server.userId !== user.id) return NextResponse.json({ error: "Serveur introuvable" }, { status: 404 });
 
-  const logPath = `/var/log/synkrone/mc_${server.id}.out.log`;
+  const logPath = `/root/.pm2/logs/mc_${server.id}-out.log`;
 
   try {
     const content = await fs.readFile(logPath, "utf-8");

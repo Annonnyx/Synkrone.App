@@ -12,7 +12,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ serverI
   if (!session?.user?.discordId) return NextResponse.json({ error: "Non authentifié" }, { status: 401 });
 
   const { action } = await req.json();
-  const validActions = ["start", "stop", "restart", "save"];
+  const validActions = ["start", "stop", "restart"];
   if (!validActions.includes(action)) {
     return NextResponse.json({ error: "Action invalide" }, { status: 400 });
   }
@@ -25,15 +25,10 @@ export async function POST(req: Request, { params }: { params: Promise<{ serverI
 
   try {
     if (process.env.NODE_ENV === "production" && server.pm2Name) {
-      if (action === "save") {
-        // Sauvegarder via console RCON ou screen
-        await execAsync(`pm2 sendLogs ${server.pm2Name} "save-all"`);
-      } else {
-        await execAsync(`pm2 ${action === "start" ? "start" : action === "stop" ? "stop" : "restart"} ${server.pm2Name}`);
-      }
+      await execAsync(`pm2 ${action} ${server.pm2Name}`);
     }
 
-    const newStatus = action === "stop" ? "OFFLINE" : action === "start" ? "ONLINE" : server.status;
+    const newStatus = action === "stop" ? "OFFLINE" : "ONLINE";
     await prisma.minecraftServer.update({ where: { id: server.id }, data: { status: newStatus } });
 
     return NextResponse.json({ success: true, status: newStatus });

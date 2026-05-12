@@ -3,7 +3,10 @@ import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 import fs from "fs/promises";
 import path from "path";
+import { exec } from "child_process";
+import { promisify } from "util";
 
+const execAsync = promisify(exec);
 const BOTS_PATH = process.env.VPS_BOTS_PATH ?? "/bots";
 const TEMPLATE_PATH = `${process.env.VPS_SHARED_PATH ?? "/Partage/Synkrone"}/templates/main.py`;
 
@@ -109,6 +112,11 @@ export async function POST(req: Request) {
         dirPath: botDir,
       },
     });
+
+    // Enregistrer dans PM2 (en production)
+    if (process.env.NODE_ENV === "production") {
+      await execAsync(`cd ${botDir} && pm2 start main.py --name synkrone_${bot.id} --interpreter python3`);
+    }
 
     // Débiter les Kr
     await prisma.$transaction([

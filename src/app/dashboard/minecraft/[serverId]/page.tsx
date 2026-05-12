@@ -80,7 +80,7 @@ export default function MinecraftServerPage() {
       });
   }, [serverId]);
 
-  async function handleAction(action: "start" | "stop" | "restart" | "save") {
+  async function handleAction(action: "start" | "stop" | "restart") {
     setActionLoading(action);
     setError(null);
     try {
@@ -205,7 +205,7 @@ export default function MinecraftServerPage() {
           <StatusBadge status={server.status as any} />
         </div>
         <div className="flex gap-2 flex-wrap">
-          {(["start", "stop", "restart", "save"] as const).map((action) => (
+          {(["start", "stop", "restart"] as const).map((action) => (
             <button
               key={action}
               onClick={() => handleAction(action)}
@@ -215,7 +215,7 @@ export default function MinecraftServerPage() {
               {actionLoading === action ? (
                 <span className="inline-block h-3 w-3 animate-spin rounded-full border-2 border-white border-t-transparent" />
               ) : (
-                action === "start" ? "Démarrer" : action === "stop" ? "Arrêter" : action === "restart" ? "Redémarrer" : "Sauvegarder"
+                action === "start" ? "Démarrer" : action === "stop" ? "Arrêter" : "Redémarrer"
               )}
             </button>
           ))}

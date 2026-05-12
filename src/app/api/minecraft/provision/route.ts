@@ -4,7 +4,10 @@ import { NextResponse } from "next/server";
 import fs from "fs/promises";
 import path from "path";
 import crypto from "crypto";
+import { exec } from "child_process";
+import { promisify } from "util";
 
+const execAsync = promisify(exec);
 const MC_PATH = process.env.VPS_MC_PATH ?? "/mc";
 
 function generatePassword(): string {
@@ -104,6 +107,11 @@ exec /usr/bin/java \\
       where: { id: server.id },
       data: { dirPath: serverDir, pm2Name, sftpUser },
     });
+
+    // Enregistrer dans PM2 (en production)
+    if (process.env.NODE_ENV === "production") {
+      await execAsync(`cd ${serverDir} && pm2 start start.sh --name ${pm2Name}`);
+    }
 
     // Débiter les Kr
     await prisma.$transaction([

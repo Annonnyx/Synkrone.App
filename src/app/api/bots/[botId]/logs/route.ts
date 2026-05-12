@@ -14,7 +14,7 @@ export async function GET(_: Request, { params }: { params: Promise<{ botId: str
   const bot = await prisma.bot.findUnique({ where: { id: botId } });
   if (!bot || bot.userId !== user.id) return NextResponse.json({ error: "Bot introuvable" }, { status: 404 });
 
-  const logPath = `/var/log/synkrone/synkrone_${bot.id}.out.log`;
+  const logPath = `/root/.pm2/logs/synkrone_${bot.id}-out.log`;
 
   try {
     const content = await fs.readFile(logPath, "utf-8");

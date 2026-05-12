@@ -24,6 +24,8 @@ model User {
   apps             App[]
   transactions     KroneTransaction[]
   boxQuotaMb       Int                @default(500)
+  tickets          Ticket[]
+  userStats        UserStats?
   createdAt        DateTime           @default(now())
   updatedAt        DateTime           @updatedAt
 }
@@ -169,6 +171,47 @@ model CommandDefinition {
   permissions Json
   envVars     Json
   version     String  @default("1.0.0")
+}
+
+model Ticket {
+  id          String    @id @default(cuid())
+  user        User      @relation(fields: [userId], references: [id])
+  userId      String
+  title       String
+  description String
+  category    String    @default("GENERAL")
+  status      String    @default("OPEN")
+  priority    String    @default("MEDIUM")
+  messages    TicketMessage[]
+  assignedTo  String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model TicketMessage {
+  id        String   @id @default(cuid())
+  ticket    Ticket   @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  ticketId  String
+  authorId  String
+  authorName String
+  content   String
+  isStaff   Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model UserStats {
+  id              String   @id @default(cuid())
+  user            User     @relation(fields: [userId], references: [id])
+  userId          String   @unique
+  botsOnline      Int      @default(0)
+  botsTotal       Int      @default(0)
+  mcServersOnline Int      @default(0)
+  mcServersTotal  Int      @default(0)
+  commandsUsed    Int      @default(0)
+  krSpentMonth    Int      @default(0)
+  krEarnedMonth   Int      @default(0)
+  storageUsedMb   Int      @default(0)
+  lastActiveAt    DateTime @updatedAt
 }
 
 model AdminLog {

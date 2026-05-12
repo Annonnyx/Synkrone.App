@@ -20,29 +20,34 @@ export default function DevPage() {
 
   const [boxInfo, setBoxInfo] = useState<{ quota: number; used: number } | null>(null);
   const [boxLoading, setBoxLoading] = useState(true);
+  const [globalStats, setGlobalStats] = useState<any>(null);
+  const [statsLoading, setStatsLoading] = useState(true);
 
   useEffect(() => {
     if (user?.dbId) {
       fetch("/api/krones/balance")
         .then((r) => r.json())
-        .then(() => {
-          // Simuler les infos de box depuis l'API user/me
-          return fetch("/api/user/me");
-        })
+        .then(() => fetch("/api/user/me"))
         .then((r) => r.json())
         .then((data: { boxQuotaMb: number; boxUsedMb?: number }) => {
           const quota = data.boxQuotaMb;
-          // Used = récupéré depuis l'API (0 par défaut si endpoint box absent)
           const used = data.boxUsedMb ?? 0;
           setBoxInfo({ quota, used });
           setBoxLoading(false);
         })
         .catch(() => {
-          // Fallback : utiliser le quota du rôle
           const quota = BOX_SIZE_BY_ROLE[topRole];
           setBoxInfo({ quota: quota === -1 ? 99999 : quota, used: 0 });
           setBoxLoading(false);
         });
+
+      fetch("/api/dev/stats")
+        .then((r) => r.json())
+        .then((data) => {
+          setGlobalStats(data);
+          setStatsLoading(false);
+        })
+        .catch(() => setStatsLoading(false));
     }
   }, [user?.dbId, topRole]);
 
@@ -99,6 +104,60 @@ export default function DevPage() {
           </div>
         )}
       </div>
+
+      {/* Stats globales */}
+      {isManagerOrAbove && !statsLoading && globalStats && (
+        <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
+          <h2 className="text-lg font-semibold text-white mb-4">Stats globales</h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="rounded-xl bg-neutral-950 p-4">
+              <p className="text-xs text-neutral-500">Utilisateurs</p>
+              <p className="mt-1 text-2xl font-bold text-white">{globalStats.users?.total ?? 0}</p>
+            </div>
+            <div className="rounded-xl bg-neutral-950 p-4">
+              <p className="text-xs text-neutral-500">Bots en ligne</p>
+              <p className="mt-1 text-2xl font-bold text-emerald-400">{globalStats.bots?.online ?? 0} / {globalStats.bots?.total ?? 0}</p>
+            </div>
+            <div className="rounded-xl bg-neutral-950 p-4">
+              <p className="text-xs text-neutral-500">Serveurs MC</p>
+              <p className="mt-1 text-2xl font-bold text-white">{globalStats.minecraft?.online ?? 0} / {globalStats.minecraft?.total ?? 0}</p>
+            </div>
+            <div className="rounded-xl bg-neutral-950 p-4">
+              <p className="text-xs text-neutral-500">Tickets ouverts</p>
+              <p className="mt-1 text-2xl font-bold text-yellow-400">{globalStats.tickets?.open ?? 0} / {globalStats.tickets?.total ?? 0}</p>
+            </div>
+          </div>
+
+          {/* VPS Metrics */}
+          {globalStats.vps && (
+            <div className="mt-4 grid gap-4 sm:grid-cols-3">
+              <div className="rounded-xl bg-neutral-950 p-4">
+                <p className="text-xs text-neutral-500">CPU Load</p>
+                <p className="mt-1 text-xl font-bold text-white">{globalStats.vps.cpu?.toFixed(2) ?? "N/A"}</p>
+              </div>
+              <div className="rounded-xl bg-neutral-950 p-4">
+                <p className="text-xs text-neutral-500">RAM utilisée</p>
+                <p className="mt-1 text-xl font-bold text-white">{globalStats.vps.ram?.toFixed(1) ?? "N/A"}%</p>
+              </div>
+              <div className="rounded-xl bg-neutral-950 p-4">
+                <p className="text-xs text-neutral-500">Disk /</p>
+                <p className="mt-1 text-xl font-bold text-white">{globalStats.vps.disk ?? "N/A"}%</p>
+              </div>
+            </div>
+          )}
+
+          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+            <div className="rounded-xl bg-neutral-950 p-4">
+              <p className="text-xs text-neutral-500">Kr en circulation</p>
+              <p className="mt-1 text-xl font-bold text-white">{globalStats.krones?.inCirculation?.toLocaleString() ?? 0} Kr</p>
+            </div>
+            <div className="rounded-xl bg-neutral-950 p-4">
+              <p className="text-xs text-neutral-500">Kr total dépensé</p>
+              <p className="mt-1 text-xl font-bold text-white">{globalStats.krones?.totalSpent?.toLocaleString() ?? 0} Kr</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Raccourcis */}
       <div>

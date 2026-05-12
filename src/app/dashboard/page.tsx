@@ -63,6 +63,7 @@ function getServiceLink(service: Service) {
 export default function DashboardPage() {
   const { data: session, status } = useSession();
   const [services, setServices] = useState<Service[]>([]);
+  const [stats, setStats] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
   const user = session?.user;
@@ -70,13 +71,13 @@ export default function DashboardPage() {
 
   useEffect(() => {
     if (status === "authenticated") {
-      fetch("/api/user/services")
-        .then((res) => {
-          if (!res.ok) throw new Error("Erreur de chargement");
-          return res.json();
-        })
-        .then((data: Service[]) => {
-          setServices(data);
+      Promise.all([
+        fetch("/api/user/services").then((r) => r.json()),
+        fetch("/api/user/stats").then((r) => r.json()),
+      ])
+        .then(([servicesData, statsData]) => {
+          setServices(servicesData.services ?? []);
+          setStats(statsData);
         })
         .catch(() => {
           setServices([]);
@@ -107,18 +108,36 @@ export default function DashboardPage() {
           <p className="mt-1 text-2xl font-bold"><KrBadge amount={user?.kronesBalance ?? 0} /></p>
         </div>
         <div className="rounded-xl border border-neutral-800 bg-neutral-900 p-5">
-          <p className="text-sm text-neutral-400">Abonnement</p>
-          <p className="mt-1 text-2xl font-bold text-white">{user?.subscriptionId ? "Actif" : "Gratuit"}</p>
+          <p className="text-sm text-neutral-400">Kr dépensés ce mois</p>
+          <p className="mt-1 text-2xl font-bold text-red-400">{stats?.krSpentMonth ?? 0} Kr</p>
         </div>
         <div className="rounded-xl border border-neutral-800 bg-neutral-900 p-5">
-          <p className="text-sm text-neutral-400">Bots actifs</p>
-          <p className="mt-1 text-2xl font-bold text-white">{bots.filter((b) => b.status === "ONLINE").length}</p>
+          <p className="text-sm text-neutral-400">Bots en ligne</p>
+          <p className="mt-1 text-2xl font-bold text-white">{stats?.bots?.online ?? bots.filter((b) => b.status === "ONLINE").length} / {stats?.bots?.total ?? bots.length}</p>
         </div>
         <div className="rounded-xl border border-neutral-800 bg-neutral-900 p-5">
-          <p className="text-sm text-neutral-400">Services totaux</p>
-          <p className="mt-1 text-2xl font-bold text-white">{totalServices}</p>
+          <p className="text-sm text-neutral-400">Serveurs MC en ligne</p>
+          <p className="mt-1 text-2xl font-bold text-white">{stats?.minecraft?.online ?? mcServers.filter((s) => s.status === "ONLINE").length} / {stats?.minecraft?.total ?? mcServers.length}</p>
         </div>
       </div>
+
+      {/* Stats enrichies */}
+      {stats && (
+        <div className="mt-6 grid gap-4 sm:grid-cols-3">
+          <div className="rounded-xl border border-neutral-800 bg-neutral-900 p-4">
+            <p className="text-xs text-neutral-500">Commandes utilisées (bots)</p>
+            <p className="mt-1 text-xl font-bold text-white">{stats.bots?.commandsUsed ?? 0}</p>
+          </div>
+          <div className="rounded-xl border border-neutral-800 bg-neutral-900 p-4">
+            <p className="text-xs text-neutral-500">Kr gagnés ce mois</p>
+            <p className="mt-1 text-xl font-bold text-emerald-400">+{stats.krEarnedMonth ?? 0} Kr</p>
+          </div>
+          <div className="rounded-xl border border-neutral-800 bg-neutral-900 p-4">
+            <p className="text-xs text-neutral-500">Transactions récentes</p>
+            <p className="mt-1 text-xl font-bold text-white">{stats.transactions?.length ?? 0}</p>
+          </div>
+        </div>
+      )}
 
       {/* Services actifs */}
       <div className="mt-10">

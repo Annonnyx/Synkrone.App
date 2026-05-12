@@ -39,7 +39,7 @@ export default function BotModulesPage() {
     ])
       .then(([botData, cmds]) => {
         setBot(botData);
-        setCommands(cmds);
+        setCommands(Array.isArray(cmds) ? cmds : []);
         setLoading(false);
       })
       .catch(() => {

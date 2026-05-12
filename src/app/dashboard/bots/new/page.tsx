@@ -148,6 +148,10 @@ export default function NewBotPage() {
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [modules, setModules] = useState<ModuleDef[]>(fallbackModules);
   const [apiLoading, setApiLoading] = useState(false);
+  const [prefix, setPrefix] = useState("!");
+  const [customOpen, setCustomOpen] = useState(false);
+  const [customDesc, setCustomDesc] = useState("");
+  const [customSubmitting, setCustomSubmitting] = useState(false);
 
   useEffect(() => {
     if (step === 2) {
@@ -234,8 +238,10 @@ export default function NewBotPage() {
     });
   }
 
+  const PREFIX_OPTIONS = ["!", "$", "%", "&", "*", "+", "-", ".", "/", "?", "^", "~", "=", ">", "<"];
+
   function canProceedStep1() {
-    return botName.trim().length > 0 && botName.length <= 50 && token.trim().length > 0;
+    return botName.trim().length > 0 && botName.length <= 50 && token.trim().length > 0 && PREFIX_OPTIONS.includes(prefix);
   }
 
   /* ── STEP 1 ── */
@@ -278,6 +284,27 @@ export default function NewBotPage() {
               </button>
             </div>
           </div>
+
+          <div>
+            <label className="block text-sm font-medium text-neutral-300 mb-1.5">Préfixe *</label>
+            <div className="flex flex-wrap gap-2">
+              {PREFIX_OPTIONS.map((p) => (
+                <button
+                  key={p}
+                  type="button"
+                  onClick={() => setPrefix(p)}
+                  className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+                    prefix === p
+                      ? "bg-indigo-600 text-white"
+                      : "bg-neutral-800 text-neutral-300 hover:bg-neutral-700"
+                  }`}
+                >
+                  {p}
+                </button>
+              ))}
+            </div>
+            <p className="mt-1 text-xs text-neutral-500">Les caractères @ et # sont interdits.</p>
+          </div>
         </div>
 
         <div className="mt-6 flex flex-wrap gap-3">
@@ -288,13 +315,10 @@ export default function NewBotPage() {
             Comment créer un bot Discord ?
           </button>
           <button
-            onClick={() => {
-              setServiceMsg("Service non disponible pour le moment");
-              setTimeout(() => setServiceMsg(null), 3000);
-            }}
+            onClick={() => setCustomOpen(true)}
             className="rounded-lg border border-neutral-800 bg-neutral-900 px-4 py-2 text-sm text-neutral-300 hover:border-yellow-500/30 hover:text-yellow-400 transition-colors"
           >
-            Me le faire faire (3 Kr)
+            Demander un bot custom
           </button>
         </div>
 
@@ -313,6 +337,70 @@ export default function NewBotPage() {
         </div>
 
         <HelpModal open={helpOpen} onClose={() => setHelpOpen(false)} />
+
+        {/* Custom bot request modal */}
+        {customOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+            <div className="w-full max-w-lg rounded-2xl border border-neutral-800 bg-neutral-900 p-6 shadow-2xl">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-bold text-white">Demander un bot custom</h3>
+                <button onClick={() => setCustomOpen(false)} className="text-neutral-400 hover:text-white text-xl">×</button>
+              </div>
+              <p className="text-sm text-neutral-400 mb-4">
+                Décris ton besoin (commandes spécifiques, intégrations, comportements…). Notre équipe reviendra vers toi.
+              </p>
+              <textarea
+                value={customDesc}
+                onChange={(e) => setCustomDesc(e.target.value)}
+                rows={5}
+                className="w-full rounded-xl border border-neutral-800 bg-neutral-950 px-4 py-2.5 text-sm text-white placeholder-neutral-600 focus:border-indigo-500 focus:outline-none"
+                placeholder="Je veux un bot qui..."
+              />
+              <div className="mt-6 flex justify-end gap-3">
+                <button
+                  onClick={() => setCustomOpen(false)}
+                  className="rounded-xl border border-neutral-800 bg-neutral-900 px-5 py-2 text-sm font-medium text-neutral-300 hover:bg-neutral-800 transition-colors"
+                >
+                  Annuler
+                </button>
+                <button
+                  onClick={async () => {
+                    if (!customDesc.trim()) return;
+                    setCustomSubmitting(true);
+                    try {
+                      const res = await fetch("/api/tickets", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                          title: `Demande bot custom — ${botName || "Sans nom"}`,
+                          description: customDesc.trim(),
+                          category: "BOT",
+                          priority: "MEDIUM",
+                        }),
+                      });
+                      if (res.ok) {
+                        setCustomOpen(false);
+                        setCustomDesc("");
+                        setServiceMsg("Demande envoyée ! Suivez-la dans Support.");
+                        setTimeout(() => setServiceMsg(null), 4000);
+                      } else {
+                        setServiceMsg("Erreur lors de l'envoi.");
+                      }
+                    } catch {
+                      setServiceMsg("Erreur réseau.");
+                    } finally {
+                      setCustomSubmitting(false);
+                    }
+                  }}
+                  disabled={customSubmitting || !customDesc.trim()}
+                  className="rounded-xl bg-indigo-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-indigo-500 disabled:opacity-50"
+                >
+                  {customSubmitting ? "Envoi..." : "Envoyer la demande"}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
@@ -467,7 +555,7 @@ export default function NewBotPage() {
         body: JSON.stringify({
           botName: botName.trim(),
           botToken: token.trim(),
-          prefix: "!",
+          prefix,
           cogs: [...selected],
         }),
       });

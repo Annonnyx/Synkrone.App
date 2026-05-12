@@ -76,7 +76,8 @@ export default function DashboardPage() {
         fetch("/api/user/stats").then((r) => r.json()),
       ])
         .then(([servicesData, statsData]) => {
-          setServices(servicesData.services ?? []);
+          const svc = Array.isArray(servicesData?.services) ? servicesData.services : Array.isArray(servicesData) ? servicesData : [];
+          setServices(svc);
           setStats(statsData);
         })
         .catch(() => {

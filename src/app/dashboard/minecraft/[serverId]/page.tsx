@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { StatusBadge } from "@/components/ui/StatusBadge";
@@ -63,6 +63,10 @@ export default function MinecraftServerPage() {
   const [editRam, setEditRam] = useState(2);
   const [editMaxPlayers, setEditMaxPlayers] = useState(20);
   const [settingsLoading, setSettingsLoading] = useState(false);
+  const [deleteConfirm, setDeleteConfirm] = useState(false);
+  const [deleteLoading, setDeleteLoading] = useState(false);
+
+  const router = useRouter();
 
   useEffect(() => {
     fetch(`/api/minecraft/${serverId}`)
@@ -149,6 +153,24 @@ export default function MinecraftServerPage() {
       setError("Erreur réseau");
     } finally {
       setBackupLoading(false);
+    }
+  }
+
+  async function handleDelete() {
+    setDeleteLoading(true);
+    setError(null);
+    try {
+      const res = await fetch(`/api/minecraft/${serverId}`, { method: "DELETE" });
+      if (res.ok) {
+        router.push("/dashboard/minecraft");
+      } else {
+        const data = await res.json();
+        setError(data.error ?? "Erreur lors de la suppression");
+        setDeleteLoading(false);
+      }
+    } catch {
+      setError("Erreur réseau");
+      setDeleteLoading(false);
     }
   }
 
@@ -373,6 +395,38 @@ export default function MinecraftServerPage() {
             >
               {settingsLoading ? "Sauvegarde..." : "Sauvegarder"}
             </button>
+
+            <div className="border-t border-red-500/20 pt-6 mt-6">
+              <h3 className="text-lg font-semibold text-red-400 mb-4">Zone dangereuse</h3>
+              {!deleteConfirm ? (
+                <button
+                  onClick={() => setDeleteConfirm(true)}
+                  className="rounded-xl border border-red-500/30 bg-red-500/10 px-6 py-2.5 text-sm font-semibold text-red-400 transition-colors hover:bg-red-500/20"
+                >
+                  Supprimer ce serveur
+                </button>
+              ) : (
+                <div className="space-y-3">
+                  <p className="text-sm text-red-400">Cette action est irréversible. Confirmer ?</p>
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handleDelete}
+                      disabled={deleteLoading}
+                      className="rounded-xl bg-red-600 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-red-500 disabled:opacity-50"
+                    >
+                      {deleteLoading ? "Suppression..." : "Oui, supprimer"}
+                    </button>
+                    <button
+                      onClick={() => setDeleteConfirm(false)}
+                      disabled={deleteLoading}
+                      className="rounded-xl border border-neutral-800 bg-neutral-900 px-6 py-2.5 text-sm font-medium text-neutral-300 transition-colors hover:bg-neutral-800"
+                    >
+                      Annuler
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         )}
 

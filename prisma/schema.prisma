@@ -67,7 +67,7 @@ model Bot {
   group          BotGroup? @relation(fields: [groupId], references: [id])
   encPath        String
   dirPath        String
-  stats          BotStats? @relation(onDelete: Cascade)
+  stats          BotStats?
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
 }
@@ -84,7 +84,7 @@ model BotGroup {
 
 model BotStats {
   id             String   @id @default(cuid())
-  bot            Bot      @relation(fields: [botId], references: [id])
+  bot            Bot      @relation(fields: [botId], references: [id], onDelete: Cascade)
   botId          String   @unique
   serversCount   Int      @default(0)
   commandsTotal  Int      @default(0)

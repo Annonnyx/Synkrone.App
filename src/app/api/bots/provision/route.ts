@@ -143,7 +143,9 @@ export async function POST(req: Request) {
     );
 
     // Écrire le fichier .env (lu par python-dotenv dans main.py)
-    const envContent = `DISCORD_TOKEN=${botToken}\nPREFIX=${prefix}\nBOT_NAME=${botName}\n`;
+    const botOwner = session.user?.name ?? "Synkrone";
+    const supportUrl = process.env.SUPPORT_URL ?? "https://discord.gg/p768u2Pgp3";
+    const envContent = `DISCORD_TOKEN=${botToken}\nPREFIX=${prefix}\nBOT_NAME=${botName}\nBOT_OWNER=${botOwner}\nSUPPORT_URL=${supportUrl}\n`;
     const envPath = path.join(botDir, ".env");
     await fs.writeFile(envPath, envContent, { mode: 0o600 });
 

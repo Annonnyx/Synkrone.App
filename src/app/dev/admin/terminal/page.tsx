@@ -45,10 +45,17 @@ export default function TerminalPage() {
 
       ws.onopen = () => term!.writeln("Connexion établie. Bienvenue Leader.");
       ws.onmessage = (e) => term!.write(e.data);
-      ws.onclose = () => term!.writeln("\r\nConnexion fermée.");
+      ws.onclose = () => {
+        term!.writeln("\r\nConnexion fermée.");
+      };
       ws.onerror = () => term!.writeln("\r\nErreur de connexion au terminal.");
 
-      term.onData((data: string) => ws!.send(JSON.stringify({ type: "input", data })));
+      const dataHandler = (data: string) => {
+        if (ws && ws.readyState === WebSocket.OPEN) {
+          ws.send(JSON.stringify({ type: "input", data }));
+        }
+      };
+      term.onData(dataHandler);
 
       resizeObserver = new ResizeObserver(() => fitAddon.fit());
       resizeObserver.observe(termRef.current);
@@ -58,7 +65,7 @@ export default function TerminalPage() {
 
     return () => {
       disposed = true;
-      if (ws) ws.close();
+      if (ws) { ws.onclose = null; ws.close(); }
       if (term) term.dispose();
       if (resizeObserver) resizeObserver.disconnect();
     };

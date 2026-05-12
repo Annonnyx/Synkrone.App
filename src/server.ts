@@ -34,15 +34,18 @@ app.prepare().then(() => {
       env: { ...process.env, TERM: "xterm-256color" },
     });
 
-    shell.stdout.on("data", (data: Buffer) => ws.send(data.toString()));
-    shell.stderr.on("data", (data: Buffer) => ws.send(data.toString()));
+    const safeSend = (data: string) => {
+      if (ws.readyState === ws.OPEN) ws.send(data);
+    };
+
+    shell.stdout.on("data", (data: Buffer) => safeSend(data.toString()));
+    shell.stderr.on("data", (data: Buffer) => safeSend(data.toString()));
 
     ws.on("message", (message: Buffer) => {
       try {
         const { type, data } = JSON.parse(message.toString());
-        if (type === "input") {
+        if (type === "input" && shell.stdin.writable) {
           shell.stdin.write(data);
-          // Logger la commande si elle se termine par Enter
           if (data === "\r" || data === "\n") {
             // En production : enregistrer dans AdminLog
           }
@@ -50,8 +53,14 @@ app.prepare().then(() => {
       } catch {}
     });
 
-    ws.on("close", () => shell.kill());
-    shell.on("close", () => ws.close());
+    ws.on("close", () => {
+      shell.kill();
+      shell.stdout.removeAllListeners("data");
+      shell.stderr.removeAllListeners("data");
+    });
+    shell.on("close", () => {
+      if (ws.readyState === ws.OPEN) ws.close();
+    });
   });
 
   server.listen(3000, "0.0.0.0", () => {

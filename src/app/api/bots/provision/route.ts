@@ -109,16 +109,16 @@ export async function POST(req: Request) {
       JSON.stringify(config, null, 2)
     );
 
-    // Écrire le fichier .enc avec chmod 600
-    const encContent = `BOT_TOKEN=${botToken}\nPREFIX=${prefix}\nBOT_NAME=${botName}\n`;
-    const encPath = path.join(botDir, ".enc");
-    await fs.writeFile(encPath, encContent, { mode: 0o600 });
+    // Écrire le fichier .env (lu par python-dotenv dans main.py)
+    const envContent = `DISCORD_TOKEN=${botToken}\nPREFIX=${prefix}\nBOT_NAME=${botName}\n`;
+    const envPath = path.join(botDir, ".env");
+    await fs.writeFile(envPath, envContent, { mode: 0o600 });
 
     // Mettre à jour l'entrée DB avec les chemins
     await prisma.bot.update({
       where: { id: bot.id },
       data: {
-        encPath,
+        encPath: envPath,
         dirPath: botDir,
       },
     });

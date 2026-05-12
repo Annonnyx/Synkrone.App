@@ -78,13 +78,43 @@ export async function POST(req: Request) {
     // Créer le dossier du bot
     await fs.mkdir(botDir, { recursive: true });
 
-    // Copier le template complet (main.py + cogs + requirements.txt)
+    // Récupérer les modules des cogs achetés
+    const boughtCmds = await prisma.commandDefinition.findMany({
+      where: { id: { in: cogs } },
+    });
+    const boughtModules = new Set(
+      boughtCmds.map((c) => (c.module.startsWith("cogs.") ? c.module : `cogs.${c.module}`))
+    );
+
+    function shouldCopy(relPath: string): boolean {
+      // Toujours copier hors de cogs/
+      if (!relPath.startsWith("cogs/")) return true;
+      // Toujours copier cogs/__init__.py
+      if (relPath === "cogs/__init__.py") return true;
+
+      const modPath = relPath.replace(/\//g, ".").replace(/\.py$/, "");
+
+      // __init__.py dans un sous-dossier → copier si un cog acheté passe par là
+      if (relPath.endsWith("/__init__.py")) {
+        const prefix = modPath;
+        for (const mod of boughtModules) {
+          if (mod.startsWith(prefix + ".")) return true;
+        }
+        return false;
+      }
+
+      // Fichier .py dans cogs/ → copier seulement si acheté
+      return boughtModules.has(modPath);
+    }
+
+    // Copier le template filtré
     try {
       const templateFiles = await fs.readdir(TEMPLATES_DIR, { recursive: true, withFileTypes: true });
       for (const entry of templateFiles) {
         if (entry.isDirectory()) continue;
         const src = path.join(TEMPLATES_DIR, entry.parentPath ? path.join(entry.parentPath, entry.name) : entry.name);
         const rel = path.relative(TEMPLATES_DIR, src);
+        if (!shouldCopy(rel)) continue;
         const dst = path.join(botDir, rel);
         await fs.mkdir(path.dirname(dst), { recursive: true });
         await fs.copyFile(src, dst);

@@ -5,6 +5,7 @@ import fs from "fs/promises";
 import path from "path";
 import { exec } from "child_process";
 import { promisify } from "util";
+import { hasUnlimitedTokens } from "@/lib/roles";
 
 const execAsync = promisify(exec);
 const BOTS_PATH = process.env.VPS_BOTS_PATH ?? "/bots";
@@ -33,7 +34,9 @@ export async function POST(req: Request, { params }: { params: Promise<{ botId: 
     return NextResponse.json({ error: "Module déjà activé" }, { status: 400 });
   }
 
-  if (user.kronesBalance < cmdDef.priceKr) {
+  const isUnlimited = hasUnlimitedTokens(user.roles as string[]);
+
+  if (!isUnlimited && user.kronesBalance < cmdDef.priceKr) {
     return NextResponse.json({ error: "Solde Kr insuffisant" }, { status: 402 });
   }
 
@@ -42,7 +45,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ botId: 
 
   try {
     // Mettre à jour la DB
-    await prisma.$transaction([
+    const txOps: any[] = [
       prisma.bot.update({
         where: { id: bot.id },
         data: {
@@ -50,22 +53,29 @@ export async function POST(req: Request, { params }: { params: Promise<{ botId: 
           kronesConsumed: { increment: cmdDef.priceKr },
         },
       }),
-      prisma.user.update({
-        where: { id: user.id },
-        data: {
-          kronesBalance: { decrement: cmdDef.priceKr },
-          kronesSpent: { increment: cmdDef.priceKr },
-        },
-      }),
-      prisma.kroneTransaction.create({
-        data: {
-          userId: user.id,
-          amount: -cmdDef.priceKr,
-          reason: "BOT_UPGRADE",
-          relatedId: bot.id,
-        },
-      }),
-    ]);
+    ];
+
+    if (!isUnlimited) {
+      txOps.push(
+        prisma.user.update({
+          where: { id: user.id },
+          data: {
+            kronesBalance: { decrement: cmdDef.priceKr },
+            kronesSpent: { increment: cmdDef.priceKr },
+          },
+        }),
+        prisma.kroneTransaction.create({
+          data: {
+            userId: user.id,
+            amount: -cmdDef.priceKr,
+            reason: "BOT_UPGRADE",
+            relatedId: bot.id,
+          },
+        })
+      );
+    }
+
+    await prisma.$transaction(txOps);
 
     // Copier le nouveau cog dans le dossier du bot
     const modulePath = cmdDef.module.startsWith("cogs.") ? cmdDef.module : `cogs.${cmdDef.module}`;

@@ -48,6 +48,11 @@ export function hasDevAccess(userRoles: string[]): boolean {
   return hasRole(userRoles, "SUPPORT");
 }
 
+// Rôles avec tokens illimités (admin, dev seniors)
+export function hasUnlimitedTokens(userRoles: string[]): boolean {
+  return hasRole(userRoles, "MANAGER");
+}
+
 // Taille de box en Mo par rôle
 export const BOX_SIZE_BY_ROLE: Record<Role, number> = {
   USER: 0,

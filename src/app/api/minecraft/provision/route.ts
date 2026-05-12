@@ -6,6 +6,7 @@ import path from "path";
 import crypto from "crypto";
 import { exec } from "child_process";
 import { promisify } from "util";
+import { hasUnlimitedTokens } from "@/lib/roles";
 
 const execAsync = promisify(exec);
 const MC_PATH = process.env.VPS_MC_PATH ?? "/mc";
@@ -39,7 +40,9 @@ export async function POST(req: Request) {
   const user = await prisma.user.findUnique({ where: { discordId: session.user.discordId } });
   if (!user) return NextResponse.json({ error: "Utilisateur introuvable" }, { status: 404 });
 
-  if (user.kronesBalance < kronesPerMonth) {
+  const isUnlimited = hasUnlimitedTokens(user.roles as string[]);
+
+  if (!isUnlimited && user.kronesBalance < kronesPerMonth) {
     return NextResponse.json({ error: "Solde Kr insuffisant" }, { status: 402 });
   }
 
@@ -113,8 +116,9 @@ exec /usr/bin/java \\
       await execAsync(`cd ${serverDir} && pm2 start start.sh --name ${pm2Name}`);
     }
 
-    // Débiter les Kr
-    await prisma.$transaction([
+    // Débiter les Kr (sauf admin/dev)
+    if (!isUnlimited) {
+      await prisma.$transaction([
       prisma.user.update({
         where: { id: user.id },
         data: {
@@ -130,7 +134,8 @@ exec /usr/bin/java \\
           relatedId: server.id,
         },
       }),
-    ]);
+      ]);
+    }
 
     return NextResponse.json({
       success: true,

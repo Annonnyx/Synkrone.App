@@ -5,6 +5,7 @@ import fs from "fs/promises";
 import path from "path";
 import { exec } from "child_process";
 import { promisify } from "util";
+import { hasUnlimitedTokens } from "@/lib/roles";
 
 const execAsync = promisify(exec);
 const BOTS_PATH = process.env.VPS_BOTS_PATH ?? "/bots";
@@ -53,7 +54,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Utilisateur introuvable" }, { status: 404 });
   }
 
-  if (user.kronesBalance < totalCost) {
+  const isUnlimited = hasUnlimitedTokens(user.roles as string[]);
+
+  if (!isUnlimited && user.kronesBalance < totalCost) {
     return NextResponse.json({ error: "Solde Kr insuffisant" }, { status: 402 });
   }
 
@@ -165,24 +168,26 @@ export async function POST(req: Request) {
       await execAsync(`cd ${botDir} && pm2 start main.py --name synkrone_${bot.id} --interpreter python3`);
     }
 
-    // Débiter les Kr
-    await prisma.$transaction([
-      prisma.user.update({
-        where: { id: user.id },
-        data: {
-          kronesBalance: { decrement: totalCost },
-          kronesSpent: { increment: totalCost },
-        },
-      }),
-      prisma.kroneTransaction.create({
-        data: {
-          userId: user.id,
-          amount: -totalCost,
-          reason: "BOT_CREATION",
-          relatedId: bot.id,
-        },
-      }),
-    ]);
+    // Débiter les Kr (sauf pour admin/dev)
+    if (!isUnlimited) {
+      await prisma.$transaction([
+        prisma.user.update({
+          where: { id: user.id },
+          data: {
+            kronesBalance: { decrement: totalCost },
+            kronesSpent: { increment: totalCost },
+          },
+        }),
+        prisma.kroneTransaction.create({
+          data: {
+            userId: user.id,
+            amount: -totalCost,
+            reason: "BOT_CREATION",
+            relatedId: bot.id,
+          },
+        }),
+      ]);
+    }
 
     // Créer l'entrée stats
     await prisma.botStats.create({

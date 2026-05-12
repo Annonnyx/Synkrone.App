@@ -9,7 +9,7 @@ import { hasUnlimitedTokens } from "@/lib/roles";
 
 const execAsync = promisify(exec);
 const BOTS_PATH = process.env.VPS_BOTS_PATH ?? "/bots";
-const SHARED_PATH = process.env.VPS_SHARED_PATH ?? "/Partage/Synkrone";
+const SHARED_PATH = process.env.VPS_SHARED_PATH ?? process.cwd();
 const TEMPLATE_PATH = `${SHARED_PATH}/templates/main.py`;
 const TEMPLATES_DIR = `${SHARED_PATH}/templates`;
 

@@ -1,7 +1,7 @@
 import fs from "fs/promises";
 import path from "path";
 
-const COGS_PATH = process.env.COGS_TEMPLATE_PATH || "/Partage/Synkrone/templates/cogs";
+const COGS_PATH = process.env.COGS_TEMPLATE_PATH || path.join(process.cwd(), "templates/cogs");
 
 export interface CatalogCommand {
   id: string;

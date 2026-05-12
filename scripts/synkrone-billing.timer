@@ -1,0 +1,9 @@
+[Unit]
+Description=Run Synkrone billing every hour
+
+[Timer]
+OnCalendar=hourly
+Persistent=true
+
+[Install]
+WantedBy=timers.target

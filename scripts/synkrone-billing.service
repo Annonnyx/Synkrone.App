@@ -1,0 +1,10 @@
+[Unit]
+Description=Synkrone Billing Cron — hourly Krone debit for bots and MC servers
+After=network.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/synkrone/cron.env
+ExecStart=/usr/bin/curl -s -X POST http://localhost:3000/api/cron/billing -H "Authorization: Bearer ${CRON_SECRET}"
+StandardOutput=journal
+StandardError=journal

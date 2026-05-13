@@ -22,6 +22,12 @@ const bots = [
     invite: "https://discord.com/oauth2/authorize?client_id=1368234765638963261",
     support: "https://discord.gg/p768u2Pgp3",
     vote: "https://top.gg/fr/bot/1367891720871874560",
+    commands: [
+      { category: "Modération", cmds: ["/kick", "/ban", "/timeout", "/mute", "/warn", "/clear", "/lock", "/unlock"] },
+      { category: "Utilitaires", cmds: ["/userinfo", "/serverinfo", "/avatar", "/poll", "/remind", "/weather", "/translate"] },
+      { category: "Économie", cmds: ["/daily", "/balance", "/pay", "/leaderboard", "/work", "/rob", "/shop"] },
+      { category: "Fun", cmds: ["/meme", "/8ball", "/roll", "/joke", "/fact", "/anime"] },
+    ],
   },
   {
     name: "Asuna",
@@ -31,6 +37,12 @@ const bots = [
     icon: Wrench,
     invite: "https://discord.com/oauth2/authorize?client_id=1428865683986452640",
     support: "https://discord.gg/p768u2Pgp3",
+    commands: [
+      { category: "Modération", cmds: ["/ban", "/kick", "/mute", "/warn", "/notes", "/modlog", "/case"] },
+      { category: "Salons", cmds: ["/createchannel", "/deletechannel", "/clonechannel", "/setcategory", "/slowmode"] },
+      { category: "Rôles", cmds: ["/createrole", "/deleterole", "/addrole", "/removerole", "/autorole"] },
+      { category: "Backup", cmds: ["/backup create", "/backup load", "/backup list", "/backup delete"] },
+    ],
   },
   {
     name: "Kayaba",
@@ -40,6 +52,12 @@ const bots = [
     icon: Layers,
     invite: "https://discord.com/oauth2/authorize?client_id=1385913159717621780",
     support: "https://discord.gg/p768u2Pgp3",
+    commands: [
+      { category: "Collection", cmds: ["/card", "/inventory", "/collection", "/gacha", "/claim", "/upgrade"] },
+      { category: "Marché", cmds: ["/market list", "/market buy", "/market sell", "/market search", "/auction"] },
+      { category: "Échanges", cmds: ["/trade", "/trade accept", "/trade decline", "/gift"] },
+      { category: "Duels", cmds: ["/duel", "/duel ranked", "/ranking", "/team create"] },
+    ],
   },
   {
     name: "Yui",
@@ -49,6 +67,12 @@ const bots = [
     icon: Dices,
     invite: "https://discord.com/oauth2/authorize?client_id=1460012999912853810",
     support: "https://discord.gg/p768u2Pgp3",
+    commands: [
+      { category: "Casino", cmds: ["/slots", "/mines", "/blackjack", "/roulette", "/coinflip", "/jackpot"] },
+      { category: "Coffres", cmds: ["/coffre", "/coffre ouvrir", "/coffre liste", "/coffre échanger"] },
+      { category: "Économie", cmds: ["/balance", "/daily", "/pay", "/leaderboard", "/bet"] },
+      { category: "Fun", cmds: ["/roll", "/rps", "/trivia", "/hilo"] },
+    ],
   },
 ];
 
@@ -88,6 +112,27 @@ export default function DiscordPage() {
               </div>
               <h3 className="text-lg font-semibold text-white">{bot.name}</h3>
               <p className="mt-2 text-sm leading-relaxed text-neutral-400">{bot.desc}</p>
+
+              {bot.commands && (
+                <div className="mt-4 space-y-2">
+                  {bot.commands.map((cat) => (
+                    <div key={cat.category}>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-500">{cat.category}</span>
+                      <div className="mt-1 flex flex-wrap gap-1">
+                        {cat.cmds.map((cmd) => (
+                          <span
+                            key={cmd}
+                            className="rounded bg-neutral-800 px-1.5 py-0.5 text-[10px] text-neutral-300"
+                          >
+                            {cmd}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
               <div className="mt-4 flex flex-wrap gap-2">
                 <a
                   href={bot.invite}

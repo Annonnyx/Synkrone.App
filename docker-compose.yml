@@ -24,6 +24,7 @@ services:
     environment:
       DATABASE_URL: "postgresql://synkrone:synkrone_pass@db:5432/synkrone?schema=public"
     volumes:
+      - /mc:/mc
       - /Partage/Synkrone:/Partage/Synkrone
       - /var/log:/host/var/log:ro
       - /tmp:/host/tmp

@@ -42,11 +42,22 @@ fi
 
 # 4. Redémarrer SSH
 if command -v systemctl &> /dev/null; then
-    systemctl restart sshd || systemctl restart ssh
+    if systemctl restart ssh 2>/dev/null; then
+        echo "SSH redémarré (ssh.service)"
+    elif systemctl restart sshd 2>/dev/null; then
+        echo "SSH redémarré (sshd.service)"
+    else
+        echo "⚠️ Impossible de redémarrer SSH — faites-le manuellement"
+    fi
 elif command -v service &> /dev/null; then
-    service ssh restart || service sshd restart
+    if service ssh restart 2>/dev/null; then
+        echo "SSH redémarré (ssh)"
+    elif service sshd restart 2>/dev/null; then
+        echo "SSH redémarré (sshd)"
+    else
+        echo "⚠️ Impossible de redémarrer SSH — faites-le manuellement"
+    fi
 fi
-echo "SSH redémarré"
 
 # 5. Créer les utilisateurs depuis le JSON
 echo "=== Sync des utilisateurs SFTP ==="

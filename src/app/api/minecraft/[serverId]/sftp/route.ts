@@ -32,8 +32,8 @@ export async function GET(_: Request, { params }: { params: Promise<{ serverId: 
 
   const password = decryptPassword(server.sftpPasswordEnc);
   return NextResponse.json({
-    host: "synkrone.app",
-    port: 22,
+    host: process.env.VPS_SFTP_HOST ?? "92.112.194.218",
+    port: Number(process.env.VPS_SFTP_PORT ?? 22),
     user: server.sftpUser,
     password,
   });

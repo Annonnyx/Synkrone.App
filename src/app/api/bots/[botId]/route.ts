@@ -47,6 +47,7 @@ export async function DELETE(_: Request, { params }: { params: Promise<{ botId: 
   if (!session?.user?.discordId) return NextResponse.json({ error: "Non authentifié" }, { status: 401 });
   const bot = await getBot(botId, session.user.discordId);
   if (!bot) return NextResponse.json({ error: "Bot introuvable" }, { status: 404 });
+  await prisma.botStats.deleteMany({ where: { botId } });
   await prisma.bot.delete({ where: { id: botId } });
   return NextResponse.json({ success: true });
 }

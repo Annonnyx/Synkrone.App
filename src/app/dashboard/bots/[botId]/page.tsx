@@ -11,6 +11,7 @@ type BotData = {
   id: string;
   botName: string;
   prefix: string;
+  discordClientId: string | null;
   slashCommands: boolean;
   cogs: string[];
   status: string;
@@ -49,6 +50,7 @@ export default function BotDetailPage() {
   // Settings state
   const [displayName, setDisplayName] = useState("");
   const [prefix, setPrefix] = useState("");
+  const [clientId, setClientId] = useState("");
   const [slashCmds, setSlashCmds] = useState(false);
   const [settingsLoading, setSettingsLoading] = useState(false);
   const [deleteConfirm, setDeleteConfirm] = useState(false);
@@ -62,7 +64,8 @@ export default function BotDetailPage() {
       .then((data: BotData) => {
         setBot(data);
         setDisplayName(data.botName);
-        setPrefix(data.prefix);
+        setPrefix(data.prefix || "");
+        setClientId(data.discordClientId || "");
         setSlashCmds(data.slashCommands);
         setLoading(false);
       })
@@ -134,7 +137,7 @@ export default function BotDetailPage() {
       const res = await fetch(`/api/bots/${botId}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ botName: displayName, prefix }),
+        body: JSON.stringify({ botName: displayName, prefix, discordClientId: clientId || null }),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -249,7 +252,7 @@ export default function BotDetailPage() {
                 type="text"
                 value={displayName}
                 onChange={(e) => setDisplayName(e.target.value)}
-                className="w-full rounded-xl border border-neutral-800 bg-neutral-900 px-4 py-2.5 text-sm text-white placeholder-neutral-600 focus:border-indigo-500 focus:outline-none"
+                className="w-full rounded-lg border border-neutral-700 bg-neutral-800 px-3 py-2 text-sm text-white focus:border-indigo-500 focus:outline-none"
               />
             </div>
             <div>
@@ -257,9 +260,9 @@ export default function BotDetailPage() {
               <input
                 type="text"
                 value={prefix}
-                onChange={(e) => setPrefix(e.target.value.slice(0, 1))}
-                maxLength={1}
+                onChange={(e) => setPrefix(e.target.value)}
                 className="w-16 rounded-xl border border-neutral-800 bg-neutral-900 px-4 py-2.5 text-sm text-white text-center focus:border-indigo-500 focus:outline-none"
+                maxLength={1}
               />
             </div>
             <div className="flex items-center gap-3">

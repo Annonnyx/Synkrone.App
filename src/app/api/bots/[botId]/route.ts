@@ -33,10 +33,10 @@ export async function PATCH(req: Request, { params }: { params: Promise<{ botId:
   if (!session?.user?.discordId) return NextResponse.json({ error: "Non authentifié" }, { status: 401 });
   const bot = await getBot(botId, session.user.discordId);
   if (!bot) return NextResponse.json({ error: "Bot introuvable" }, { status: 404 });
-  const { botName, prefix } = await req.json();
+  const { botName, prefix, discordClientId } = await req.json();
   const updated = await prisma.bot.update({
     where: { id: botId },
-    data: { ...(botName && { botName }), ...(prefix && { prefix }) },
+    data: { ...(botName && { botName }), ...(prefix && { prefix }), ...(discordClientId !== undefined && { discordClientId }) },
   });
   return NextResponse.json(updated);
 }

@@ -57,6 +57,7 @@ model Bot {
   userId         String
   botName        String
   prefix         String    @default("!")
+  discordClientId String?
   slashCommands  Boolean   @default(false)
   cogs           String[]
   kronesConsumed Int       @default(0)

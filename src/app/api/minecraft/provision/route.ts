@@ -111,6 +111,18 @@ exec /usr/bin/java \\
       data: { dirPath: serverDir, pm2Name, sftpUser },
     });
 
+    // Écrire l'user SFTP dans le fichier partagé pour le script hôte
+    const sftpUsersPath = path.join(MC_PATH, "sftp-users.json");
+    let sftpUsers: { user: string; password: string; dir: string }[] = [];
+    try {
+      const existing = await fs.readFile(sftpUsersPath, "utf-8");
+      sftpUsers = JSON.parse(existing);
+    } catch {
+      // fichier absent
+    }
+    sftpUsers.push({ user: sftpUser, password: sftpPassword, dir: serverDir });
+    await fs.writeFile(sftpUsersPath, JSON.stringify(sftpUsers, null, 2));
+
     // Enregistrer dans PM2 (en production)
     if (process.env.NODE_ENV === "production") {
       await execAsync(`cd ${serverDir} && pm2 start start.sh --name ${pm2Name}`);

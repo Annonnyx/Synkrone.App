@@ -1,80 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import {
-  Bot,
-  ArrowLeft,
-  Dices,
-  Wrench,
-  Layers,
-  ExternalLink,
-  MessageCircle,
-  ArrowRight,
-} from "lucide-react";
-
-const bots = [
-  {
-    name: "Vex",
-    tag: "Multifonction",
-    desc: "Le bot principal de Synkrone. Modération, utilitaires, économie et plus encore. Votre allié indispensable sur Discord.",
-    color: "indigo",
-    icon: Bot,
-    invite: "https://discord.com/oauth2/authorize?client_id=1368234765638963261",
-    support: "https://discord.gg/p768u2Pgp3",
-    vote: "https://top.gg/fr/bot/1367891720871874560",
-    commands: [
-      { category: "Modération", cmds: ["/kick", "/ban", "/timeout", "/mute", "/warn", "/clear", "/lock", "/unlock"] },
-      { category: "Utilitaires", cmds: ["/userinfo", "/serverinfo", "/avatar", "/poll", "/remind", "/weather", "/translate"] },
-      { category: "Économie", cmds: ["/daily", "/balance", "/pay", "/leaderboard", "/work", "/rob", "/shop"] },
-      { category: "Fun", cmds: ["/meme", "/8ball", "/roll", "/joke", "/fact", "/anime"] },
-    ],
-  },
-  {
-    name: "Asuna",
-    tag: "Modération",
-    desc: "Gestion complète de votre serveur Discord. Création de salons et rôles, modération avancée, purge et système de backup complet.",
-    color: "cyan",
-    icon: Wrench,
-    invite: "https://discord.com/oauth2/authorize?client_id=1428865683986452640",
-    support: "https://discord.gg/p768u2Pgp3",
-    commands: [
-      { category: "Modération", cmds: ["/ban", "/kick", "/mute", "/warn", "/notes", "/modlog", "/case"] },
-      { category: "Salons", cmds: ["/createchannel", "/deletechannel", "/clonechannel", "/setcategory", "/slowmode"] },
-      { category: "Rôles", cmds: ["/createrole", "/deleterole", "/addrole", "/removerole", "/autorole"] },
-      { category: "Backup", cmds: ["/backup create", "/backup load", "/backup list", "/backup delete"] },
-    ],
-  },
-  {
-    name: "Kayaba",
-    tag: "Utilitaires",
-    desc: "Collection de cartes, marché communautaire, échanges sécurisés et duels tour par tour. Système de gacha et progression.",
-    color: "amber",
-    icon: Layers,
-    invite: "https://discord.com/oauth2/authorize?client_id=1385913159717621780",
-    support: "https://discord.gg/p768u2Pgp3",
-    commands: [
-      { category: "Collection", cmds: ["/card", "/inventory", "/collection", "/gacha", "/claim", "/upgrade"] },
-      { category: "Marché", cmds: ["/market list", "/market buy", "/market sell", "/market search", "/auction"] },
-      { category: "Échanges", cmds: ["/trade", "/trade accept", "/trade decline", "/gift"] },
-      { category: "Duels", cmds: ["/duel", "/duel ranked", "/ranking", "/team create"] },
-    ],
-  },
-  {
-    name: "Yui",
-    tag: "Fun & Jeux",
-    desc: "Casino complet : machine à sous, mines, blackjack, roulette, coffres scellés et pièce double ou rien.",
-    color: "rose",
-    icon: Dices,
-    invite: "https://discord.com/oauth2/authorize?client_id=1460012999912853810",
-    support: "https://discord.gg/p768u2Pgp3",
-    commands: [
-      { category: "Casino", cmds: ["/slots", "/mines", "/blackjack", "/roulette", "/coinflip", "/jackpot"] },
-      { category: "Coffres", cmds: ["/coffre", "/coffre ouvrir", "/coffre liste", "/coffre échanger"] },
-      { category: "Économie", cmds: ["/balance", "/daily", "/pay", "/leaderboard", "/bet"] },
-      { category: "Fun", cmds: ["/roll", "/rps", "/trivia", "/hilo"] },
-    ],
-  },
-];
+import { ArrowLeft, Bot, ExternalLink, MessageCircle, ArrowRight } from "lucide-react";
+import { discordBots } from "@/lib/discord-bots";
 
 export default function DiscordPage() {
   return (
@@ -99,7 +27,7 @@ export default function DiscordPage() {
         </div>
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {bots.map((bot) => (
+          {discordBots.map((bot) => (
             <div
               key={bot.name}
               className="group relative rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 transition-all hover:-translate-y-1 hover:bg-white/[0.04]"
@@ -152,6 +80,12 @@ export default function DiscordPage() {
                     Voter
                   </a>
                 )}
+                <Link
+                  href={`/discord/${bot.slug}`}
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-white/[0.08] bg-white/[0.03] px-3 py-1.5 text-xs font-medium text-neutral-300 transition-all hover:bg-white/[0.06]"
+                >
+                  En savoir plus <ArrowRight className="h-3 w-3" />
+                </Link>
               </div>
             </div>
           ))}

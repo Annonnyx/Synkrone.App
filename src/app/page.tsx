@@ -311,6 +311,7 @@ export default function Home() {
           {[
             {
               name: "Vex",
+              slug: "vex",
               tag: "Multifonction",
               desc: "Le bot principal de Synkrone. Modération, utilitaires, économie et plus encore.",
               color: "indigo",
@@ -321,6 +322,7 @@ export default function Home() {
             },
             {
               name: "Asuna",
+              slug: "asuna",
               tag: "Modération",
               desc: "Gestion complète de votre serveur. Création de salons et rôles, modération avancée, purge et backup.",
               color: "cyan",
@@ -330,6 +332,7 @@ export default function Home() {
             },
             {
               name: "Kayaba",
+              slug: "kayaba",
               tag: "Utilitaires",
               desc: "Collection de cartes, marché communautaire, échanges sécurisés et duels tour par tour.",
               color: "amber",
@@ -339,6 +342,7 @@ export default function Home() {
             },
             {
               name: "Yui",
+              slug: "yui",
               tag: "Fun & Jeux",
               desc: "Casino complet : machine à sous, mines, blackjack, roulette, coffres scellés et pièce double ou rien.",
               color: "rose",
@@ -378,6 +382,12 @@ export default function Home() {
                     Voter
                   </a>
                 )}
+                <Link
+                  href={`/discord/${bot.slug}`}
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-white/[0.08] bg-white/[0.03] px-3 py-1.5 text-xs font-medium text-neutral-300 transition-all hover:bg-white/[0.06]"
+                >
+                  Voir plus <ArrowRight className="h-3 w-3" />
+                </Link>
               </div>
             </div>
           ))}
